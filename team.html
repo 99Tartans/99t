@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team — 99 Tartans</title>
+<meta name="description" content="Meet the partners, investors, and advisors behind 99 Tartans — CMU alumni building Pittsburgh's next great investment community.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #fafafa;
+  --bg-alt: #f4f4f5;
+  --surface: #ffffff;
+  --text: #18181b;
+  --text-mid: #52525b;
+  --text-light: #a1a1aa;
+  --accent: #18181b;
+  --accent-hover: #2563eb;
+  --rule: #e4e4e7;
+  --font: 'Inter', -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--surface);
+}
+
+/* ═══════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════ */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.5rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(250, 250, 250, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  transition: padding 0.4s ease;
+}
+
+nav.scrolled {
+  padding: 1rem 2.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.nav-logo {
+  font-family: var(--font);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.nav-center {
+  display: flex;
+  gap: 1.8rem;
+  list-style: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-center a {
+  font-family: var(--font);
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--text-mid);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  letter-spacing: 0.01em;
+}
+
+.nav-center a:hover,
+.nav-center a.active {
+  color: var(--text);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-meta {
+  font-family: var(--font);
+  font-size: 0.82rem;
+  color: var(--text-light);
+}
+
+.nav-cta {
+  font-family: var(--font);
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-cta:hover {
+  color: var(--accent-hover);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 26px;
+  height: 18px;
+  position: relative;
+  z-index: 110;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: var(--text);
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle span:nth-child(1) { top: 0; }
+.nav-toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.nav-toggle span:nth-child(3) { bottom: 0; }
+
+.nav-toggle.active span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
+
+/* ═══════════════════════════════════════
+   PAGE HEADER
+   ═══════════════════════════════════════ */
+.page-header {
+  padding: 10rem 2.5rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header-label {
+  font-family: var(--font);
+  font-size: 0.7rem;
+  color: var(--text-light);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.page-header h1 {
+  font-family: var(--font);
+  font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  max-width: 700px;
+}
+
+.page-header h1 strong {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.page-header-desc {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--text-mid);
+  max-width: 520px;
+  line-height: 1.7;
+  margin-top: 1.5rem;
+}
+
+/* ═══════════════════════════════════════
+   TEAM SECTIONS
+   ═══════════════════════════════════════ */
+.team-section {
+  padding: 0 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-section-label {
+  font-family: var(--font);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 4rem;
+}
+
+/* ═══════════════════════════════════════
+   TEAM GRID — generous spacing
+   ═══════════════════════════════════════ */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem 4rem;
+  margin-bottom: 7rem;
+}
+
+/* ═══════════════════════════════════════
+   PERSON CARD
+   ═══════════════════════════════════════ */
+.person {
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.person-avatar {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.person:hover .person-avatar {
+  transform: scale(1.02);
+}
+
+.person-initials {
+  font-family: var(--font);
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--surface);
+  letter-spacing: -0.02em;
+  opacity: 0.9;
+  user-select: none;
+}
+
+.person-name {
+  font-family: var(--font);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.3rem;
+  transition: color 0.3s ease;
+}
+
+.person:hover .person-name {
+  color: var(--accent-hover);
+}
+
+.person-role {
+  font-family: var(--font);
+  font-size: 0.82rem;
+  color: var(--text-mid);
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+}
+
+.person-class {
+  font-family: var(--font);
+  font-size: 0.68rem;
+  color: var(--text-light);
+  letter-spacing: 0.04em;
+}
+
+/* ═══════════════════════════════════════
+   BIO MODAL
+   ═══════════════════════════════════════ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(24, 24, 27, 0.4);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal {
+  position: fixed;
+  z-index: 210;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.96);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  max-width: 560px;
+  width: calc(100% - 3rem);
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+  padding: 3.5rem 3rem 3rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.modal.open {
+  opacity: 1;
+  pointer-events: all;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+  color: var(--text-light);
+}
+
+.modal-close:hover {
+  background: var(--bg-alt);
+  color: var(--text);
+}
+
+.modal-close svg {
+  width: 16px;
+  height: 16px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.modal-avatar {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.modal-avatar .person-initials {
+  font-family: var(--font);
+  font-size: 1.6rem;
+}
+
+.modal-info h2 {
+  font-family: var(--font);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.15rem;
+}
+
+.modal-info .modal-role {
+  font-family: var(--font);
+  font-size: 0.85rem;
+  color: var(--text-mid);
+}
+
+.modal-info .modal-class {
+  font-family: var(--font);
+  font-size: 0.68rem;
+  color: var(--text-light);
+  letter-spacing: 0.04em;
+  margin-top: 0.15rem;
+}
+
+.modal-bio {
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: var(--text-mid);
+  line-height: 1.75;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.modal-socials {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.modal-social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font);
+  font-size: 0.7rem;
+  color: var(--text-light);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--rule);
+  transition: all 0.25s ease;
+}
+
+.modal-social-link:hover {
+  color: var(--text);
+  border-color: var(--text);
+}
+
+.modal-social-link svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════
+   CTA BAND
+   ═══════════════════════════════════════ */
+.cta-band {
+  background: var(--bg);
+  padding: 5rem 2.5rem;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  margin-top: 2rem;
+}
+
+.cta-band-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.cta-band h2 {
+  font-family: var(--font);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.cta-band p {
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--text-mid);
+  margin-top: 0.4rem;
+}
+
+.cta-band-actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-shrink: 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font);
+  font-size: 0.82rem;
+  font-weight: 400;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-dark {
+  background: var(--text);
+  color: var(--surface);
+}
+
+.btn-dark:hover {
+  background: var(--accent-hover);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--rule);
+}
+
+.btn-outline:hover {
+  border-color: var(--text);
+}
+
+/* ═══════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════ */
+footer {
+  background: var(--bg);
+  color: var(--text-mid);
+  padding: 3rem 2.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left {
+  font-family: var(--font);
+  font-size: 0.7rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+}
+
+.footer-left a {
+  color: var(--text-mid);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-left a:hover {
+  color: var(--accent-hover);
+}
+
+.footer-right {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-right a {
+  font-family: var(--font);
+  font-size: 0.7rem;
+  color: var(--text-light);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.footer-right a:hover {
+  color: var(--accent-hover);
+}
+
+/* ═══════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  nav { padding: 1.2rem 1.5rem; }
+
+  .nav-center {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transform: none;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 105;
+  }
+
+  .nav-center.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .nav-center a {
+    font-size: 1.2rem;
+    color: var(--text-mid);
+  }
+
+  .nav-meta { display: none; }
+  .nav-cta { display: none; }
+  .nav-toggle { display: block; }
+
+  .page-header { padding: 8rem 1.5rem 3rem; }
+  .team-section { padding: 0 1.5rem; }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 2rem;
+  }
+
+  .person-avatar {
+    width: 110px;
+    height: 110px;
+    margin-bottom: 1.2rem;
+  }
+
+  .person-initials { font-size: 2rem; }
+  .person-name { font-size: 1.1rem; }
+
+  .modal {
+    padding: 2.5rem 2rem 2rem;
+    max-width: 100%;
+    width: calc(100% - 2rem);
+  }
+
+  .modal-header { gap: 1rem; }
+
+  .modal-avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .modal-avatar .person-initials { font-size: 1.3rem; }
+  .modal-info h2 { font-size: 1.3rem; }
+
+  .modal-socials {
+    flex-wrap: wrap;
+  }
+
+  .cta-band-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta-band-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn { width: 100%; justify-content: center; }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .person-avatar {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 1.5rem;
+  }
+
+  .person-initials { font-size: 2.2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">99 Tartans</a>
+  <ul class="nav-center" id="navLinks">
+    <li><a href="about.html" onclick="closeNav()">About</a></li>
+    <li><a href="portfolio.html" onclick="closeNav()">Portfolio</a></li>
+    <li><a href="team.html" class="active" onclick="closeNav()">Team</a></li>
+    <li><a href="faq.html" onclick="closeNav()">FAQ</a></li>
+    <li><a href="contact.html" onclick="closeNav()">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <span class="nav-meta" id="navMeta">Pittsburgh, --:--</span>
+    <a href="contact.html" class="nav-cta">Apply now</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── Page Header ── -->
+<div class="page-header reveal">
+  <div class="page-header-label">Team</div>
+  <h1>The people behind 99 Tartans.</h1>
+  <p class="page-header-desc">Operators, founders, and investors — all CMU alumni united by a belief that the best companies start with the best people.</p>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PARTNERS
+     ═══════════════════════════════════════ -->
+<div class="team-section reveal">
+  <div class="team-section-label">Partners</div>
+  <div class="team-grid">
+
+    <div class="person" role="button" tabindex="0"
+         data-color="#c83c2c"
+         data-name="Sarah Chen"
+         data-role="Managing Partner"
+         data-class="Tepper '09"
+         data-bio="Sarah leads investment strategy at 99 Tartans, drawing on over a decade of venture capital and operating experience. Before founding the fund, she was a principal at a top-tier VC firm focused on enterprise software and led product at two startups through successful exits. She serves on three portfolio company boards and mentors CMU founders through the Swartz Center."
+         data-linkedin="https://linkedin.com/in/"
+         data-twitter="https://twitter.com/"
+         data-email="sarah@99tartans.com">
+      <div class="person-avatar" style="background: #c83c2c;"><span class="person-initials">SC</span></div>
+      <div class="person-name">Sarah Chen</div>
+      <div class="person-role">Managing Partner</div>
+      <div class="person-class">Tepper '09</div>
+    </div>
+
+    <div class="person" role="button" tabindex="0"
+         data-color="#8b6b4a"
+         data-name="Michael Okonkwo"
+         data-role="Managing Partner"
+         data-class="SCS '07"
+         data-bio="Michael brings deep technical expertise and a passion for deep tech to 99 Tartans. He spent eight years as an engineering leader at a major autonomous vehicle company before transitioning to investing full-time. His background in robotics and machine learning gives him a unique lens for evaluating technical founders and ambitious moonshot ideas rooted in CMU research."
+         data-linkedin="https://linkedin.com/in/"
+         data-twitter="https://twitter.com/"
+         data-email="michael@99tartans.com">
+      <div class="person-avatar" style="background: #8b6b4a;"><span class="person-initials">MO</span></div>
+      <div class="person-name">Michael Okonkwo</div>
+      <div class="person-role">Managing Partner</div>
+      <div class="person-class">SCS '07</div>
+    </div>
+
+    <div class="person" role="button" tabindex="0"
+         data-color="#6b7c5a"
+         data-name="Priya Raghavan"
+         data-role="Partner"
+         data-class="ECE '12"
+         data-bio="Priya focuses on hardware, semiconductors, and medtech investments at 99 Tartans. She previously co-founded a medical device startup that was acquired, and spent five years at a leading semiconductor firm. She brings hands-on experience navigating complex regulatory environments and hardware supply chains, and is passionate about supporting founders building in atoms, not just bits."
+         data-linkedin="https://linkedin.com/in/"
+         data-twitter="https://twitter.com/"
+         data-email="priya@99tartans.com">
+      <div class="person-avatar" style="background: #6b7c5a;"><span class="person-initials">PR</span></div>
+      <div class="person-name">Priya Raghavan</div>
+      <div class="person-role">Partner</div>
+      <div class="person-class">ECE '12</div>
+    </div>
+
+    <div class="person" role="button" tabindex="0"
+         data-color="#5a6b7c"
+         data-name="David Park"
+         data-role="Partner"
+         data-class="Dietrich '11"
+         data-bio="David leads community and founder relations at 99 Tartans. With a background in design and behavioral economics, he helps portfolio companies refine their go-to-market strategy and brand positioning. He previously ran growth at a consumer fintech company and was a founding team member at a Y Combinator-backed startup. He believes the best investments start with authentic relationships."
+         data-linkedin="https://linkedin.com/in/"
+         data-twitter="https://twitter.com/"
+         data-email="david@99tartans.com">
+      <div class="person-avatar" style="background: #5a6b7c;"><span class="person-initials">DP</span></div>
+      <div class="person-name">David Park</div>
+      <div class="person-role">Partner</div>
+      <div class="person-class">Dietrich '11</div>
+    </div>
+
+    <div class="person" role="button" tabindex="0"
+         data-color="#7c5a6b"
+         data-name="Elena Vasquez"
+         data-role="Venture Partner"
+         data-class="Heinz '14"
+         data-bio="Elena advises 99 Tartans on policy, impact investing, and civic tech. She is currently a senior fellow at a national policy institute and previously served in city government leading innovation initiatives. Her experience bridging the public and private sectors helps portfolio companies navigate government contracts, civic partnerships, and social impact metrics."
+         data-linkedin="https://linkedin.com/in/"
+         data-email="elena@99tartans.com">
+      <div class="person-avatar" style="background: #7c5a6b;"><span class="person-initials">EV</span></div>
+      <div class="person-name">Elena Vasquez</div>
+      <div class="person-role">Venture Partner</div>
+      <div class="person-class">Heinz '14</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     ADVISORS
+     ═══════════════════════════════════════ -->
+<div class="team-section reveal">
+  <div class="team-section-label">Advisors</div>
+  <div class="team-grid">
+
+    <div class="person" role="button" tabindex="0"
+         data-color="#6b5a4a"
+         data-name="James Wright"
+         data-role="Advisor"
+         data-class="SCS '95"
+         data-bio="James is a serial entrepreneur and angel investor who has founded three companies in enterprise infrastructure, two of which went public. He advises 99 Tartans on deal sourcing, LP relations, and fund strategy. A longtime Pittsburgh advocate, he sits on the boards of several CMU-affiliated organizations and actively mentors first-time founders."
+         data-linkedin="https://linkedin.com/in/">
+      <div class="person-avatar" style="background: #6b5a4a;"><span class="person-initials">JW</span></div>
+      <div class="person-name">James Wright</div>
+      <div class="person-role">Advisor</div>
+      <div class="person-class">SCS '95</div>
+    </div>
+
+    <div class="person" role="button" tabindex="0"
+         data-color="#4a6b6b"
+         data-name="Nina Kowalski"
+         data-role="Advisor"
+         data-class="MCS '01"
+         data-bio="Nina is a veteran product executive who has led teams at three Fortune 500 technology companies. She specializes in scaling B2B SaaS products from early traction to market dominance. At 99 Tartans, she works closely with portfolio founders on product-market fit, pricing strategy, and building high-performing engineering teams."
+         data-linkedin="https://linkedin.com/in/"
+         data-twitter="https://twitter.com/">
+      <div class="person-avatar" style="background: #4a6b6b;"><span class="person-initials">NK</span></div>
+      <div class="person-name">Nina Kowalski</div>
+      <div class="person-role">Advisor</div>
+      <div class="person-class">MCS '01</div>
+    </div>
+
+    <div class="person" role="button" tabindex="0"
+         data-color="#5a5a7c"
+         data-name="Alex Kumar"
+         data-role="Advisor"
+         data-class="Tepper '04"
+         data-bio="Alex is a managing director at a global investment bank with two decades of experience in technology M&amp;A. He provides 99 Tartans portfolio companies with guidance on fundraising strategy, exit planning, and corporate development. His extensive network across institutional investors and strategic acquirers is an invaluable resource for the fund's most ambitious founders."
+         data-linkedin="https://linkedin.com/in/">
+      <div class="person-avatar" style="background: #5a5a7c;"><span class="person-initials">AK</span></div>
+      <div class="person-name">Alex Kumar</div>
+      <div class="person-role">Advisor</div>
+      <div class="person-class">Tepper '04</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── Bio Modal ── -->
+<div class="modal-overlay" id="modalOverlay"></div>
+<div class="modal" id="modal">
+  <button class="modal-close" id="modalClose" aria-label="Close bio">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <div class="modal-header">
+    <div class="modal-avatar" id="modalAvatar">
+      <span class="person-initials" id="modalInitials"></span>
+    </div>
+    <div class="modal-info">
+      <h2 id="modalName"></h2>
+      <div class="modal-role" id="modalRole"></div>
+      <div class="modal-class" id="modalClass"></div>
+    </div>
+  </div>
+  <div class="modal-bio" id="modalBio"></div>
+  <div class="modal-socials" id="modalSocials"></div>
+</div>
+
+<!-- ── CTA Band ── -->
+<div class="cta-band">
+  <div class="cta-band-inner reveal">
+    <div class="cta-band-text">
+      <h2>Want to join the team? Reach out.</h2>
+      <p>We're always looking for passionate CMU alumni to invest alongside us.</p>
+    </div>
+    <div class="cta-band-actions">
+      <a href="contact.html" class="btn btn-dark">
+        Get in touch
+      </a>
+      <a href="portfolio.html" class="btn btn-outline">
+        View portfolio
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      99 Tartans · 501(c)(3) nonprofit<br>
+      6401 Penn Ave, Pittsburgh, PA 15206<br>
+      <a href="mailto:hello@99Tartans.com">hello@99Tartans.com</a>
+    </div>
+    <div class="footer-right">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html">Apply</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ═══════════════════════════════════════
+// Modal — reads data-* attributes from .person cards
+// ═══════════════════════════════════════
+const overlay = document.getElementById('modalOverlay');
+const modal = document.getElementById('modal');
+
+function getInitials(name) {
+  return name.split(' ').map(w => w[0]).join('').toUpperCase();
+}
+
+document.querySelectorAll('.person').forEach(card => {
+  function open() {
+    const d = card.dataset;
+    const initials = getInitials(d.name || '??');
+
+    document.getElementById('modalAvatar').style.background = d.color || '#8b7b6b';
+    document.getElementById('modalInitials').textContent = initials;
+    document.getElementById('modalName').textContent = d.name || '';
+    document.getElementById('modalRole').textContent = d.role || '';
+    document.getElementById('modalClass').textContent = d.class || '';
+    document.getElementById('modalBio').textContent = d.bio || '';
+
+    const socialsEl = document.getElementById('modalSocials');
+    socialsEl.innerHTML = '';
+
+    if (d.linkedin) {
+      socialsEl.innerHTML += `<a href="${d.linkedin}" class="modal-social-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn</a>`;
+    }
+
+    if (d.twitter) {
+      socialsEl.innerHTML += `<a href="${d.twitter}" class="modal-social-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X / Twitter</a>`;
+    }
+
+    if (d.email) {
+      socialsEl.innerHTML += `<a href="mailto:${d.email}" class="modal-social-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,7 12,13 2,7"/></svg>
+        Email</a>`;
+    }
+
+    overlay.classList.add('open');
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  card.addEventListener('click', open);
+  card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+});
+
+function closeModal() {
+  overlay.classList.remove('open');
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('modalClose').addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ═══════════════════════════════════════
+// Pittsburgh time
+// ═══════════════════════════════════════
+function updateTime() {
+  const now = new Date().toLocaleTimeString('en-US', {
+    timeZone: 'America/New_York',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false
+  });
+  document.getElementById('navMeta').textContent = 'Pittsburgh, ' + now;
+}
+updateTime();
+setInterval(updateTime, 30000);
+
+// ═══════════════════════════════════════
+// Nav scroll
+// ═══════════════════════════════════════
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// ═══════════════════════════════════════
+// Mobile nav
+// ═══════════════════════════════════════
+const toggle = document.getElementById('navToggle');
+const links = document.getElementById('navLinks');
+
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('active');
+  links.classList.toggle('open');
+  document.body.style.overflow = links.classList.contains('open') ? 'hidden' : '';
+});
+
+function closeNav() {
+  toggle.classList.remove('active');
+  links.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ═══════════════════════════════════════
+// Scroll reveal
+// ═══════════════════════════════════════
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+// ═══════════════════════════════════════
+// Stagger grid children
+// ═══════════════════════════════════════
+const grids = document.querySelectorAll('.team-grid');
+const gridObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      Array.from(entry.target.children).forEach((child, i) => {
+        child.style.opacity = '0';
+        child.style.transform = 'translateY(16px)';
+        child.style.transition = `opacity 0.5s ease ${i * 0.04}s, transform 0.5s ease ${i * 0.04}s`;
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            child.style.opacity = '1';
+            child.style.transform = 'translateY(0)';
+          });
+        });
+      });
+      gridObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.05 });
+grids.forEach(g => gridObserver.observe(g));
+</script>
+
+</body>
+</html>

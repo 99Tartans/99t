@@ -241,6 +241,7 @@ nav.scrolled {
 .person-avatar {
   width: 140px;
   height: 140px;
+  border-radius: 50%;
   margin: 0 auto 1.8rem;
   display: flex;
   align-items: center;
@@ -248,6 +249,12 @@ nav.scrolled {
   position: relative;
   overflow: hidden;
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.person-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .person:hover .person-avatar {
@@ -372,12 +379,19 @@ nav.scrolled {
 .modal-avatar {
   width: 80px;
   height: 80px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   position: relative;
   overflow: hidden;
+}
+
+.modal-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .modal-avatar .person-initials {
@@ -577,6 +591,37 @@ footer {
 }
 
 /* ═══════════════════════════════════════
+   PAST ASSOCIATES
+   ═══════════════════════════════════════ */
+.past-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem 3rem;
+  margin-bottom: 7rem;
+}
+
+.past-name {
+  font-family: var(--font);
+  font-size: 0.85rem;
+  color: var(--text-mid);
+  padding: 0.45rem 0;
+}
+
+.past-name span {
+  color: var(--text-light);
+  font-size: 0.72rem;
+  margin-left: 0.3rem;
+}
+
+@media (max-width: 768px) {
+  .past-grid { grid-template-columns: repeat(2, 1fr); gap: 0.4rem 2rem; }
+}
+
+@media (max-width: 480px) {
+  .past-grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════
    ANIMATIONS
    ═══════════════════════════════════════ */
 .reveal {
@@ -735,136 +780,198 @@ footer {
 </div>
 
 <!-- ═══════════════════════════════════════
-     PARTNERS
+     LEADERSHIP
      ═══════════════════════════════════════ -->
 <div class="team-section reveal">
-  <div class="team-section-label">Partners</div>
+  <div class="team-section-label">Leadership</div>
   <div class="team-grid">
 
     <div class="person" role="button" tabindex="0"
          data-color="#c83c2c"
-         data-name="Sarah Chen"
-         data-role="Managing Partner"
-         data-class="Tepper '09"
-         data-bio="Sarah leads investment strategy at 99 Tartans, drawing on over a decade of venture capital and operating experience. Before founding the fund, she was a principal at a top-tier VC firm focused on enterprise software and led product at two startups through successful exits. She serves on three portfolio company boards and mentors CMU founders through the Swartz Center."
-         data-linkedin="https://linkedin.com/in/"
-         data-twitter="https://twitter.com/"
-         data-email="sarah@99tartans.com">
-      <div class="person-avatar" style="background: #c83c2c;"><span class="person-initials">SC</span></div>
-      <div class="person-name">Sarah Chen</div>
-      <div class="person-role">Managing Partner</div>
-      <div class="person-class">Tepper '09</div>
+         data-name="Robb Myer"
+         data-role="Founder"
+         data-class="TPR '06"
+         data-img="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/1609270068983-D69CTAFYATSNOPHT9M16/20201012_A%25252BR_Previews-6_websize.jpg"
+         data-linkedin="https://www.linkedin.com/in/robbmyer/">
+      <div class="person-avatar"><img src="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/1609270068983-D69CTAFYATSNOPHT9M16/20201012_A%25252BR_Previews-6_websize.jpg" alt="Robb Myer"></div>
+      <div class="person-name">Robb Myer</div>
+      <div class="person-role">Founder</div>
+      <div class="person-class">TPR '06</div>
     </div>
 
     <div class="person" role="button" tabindex="0"
          data-color="#8b6b4a"
-         data-name="Michael Okonkwo"
-         data-role="Managing Partner"
-         data-class="SCS '07"
-         data-bio="Michael brings deep technical expertise and a passion for deep tech to 99 Tartans. He spent eight years as an engineering leader at a major autonomous vehicle company before transitioning to investing full-time. His background in robotics and machine learning gives him a unique lens for evaluating technical founders and ambitious moonshot ideas rooted in CMU research."
-         data-linkedin="https://linkedin.com/in/"
-         data-twitter="https://twitter.com/"
-         data-email="michael@99tartans.com">
-      <div class="person-avatar" style="background: #8b6b4a;"><span class="person-initials">MO</span></div>
-      <div class="person-name">Michael Okonkwo</div>
-      <div class="person-role">Managing Partner</div>
-      <div class="person-class">SCS '07</div>
+         data-name="Christopher Elston"
+         data-role="Executive Director"
+         data-class="TPR '23"
+         data-img="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/ba96e330-64ac-4546-ba7d-44fe3ddcb093/Christopher_Elston-tpr23-crop.jpg"
+         data-linkedin="https://www.linkedin.com/in/christopher-elston/">
+      <div class="person-avatar"><img src="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/ba96e330-64ac-4546-ba7d-44fe3ddcb093/Christopher_Elston-tpr23-crop.jpg" alt="Christopher Elston"></div>
+      <div class="person-name">Christopher Elston</div>
+      <div class="person-role">Executive Director</div>
+      <div class="person-class">TPR '23</div>
     </div>
 
     <div class="person" role="button" tabindex="0"
          data-color="#6b7c5a"
-         data-name="Priya Raghavan"
-         data-role="Partner"
-         data-class="ECE '12"
-         data-bio="Priya focuses on hardware, semiconductors, and medtech investments at 99 Tartans. She previously co-founded a medical device startup that was acquired, and spent five years at a leading semiconductor firm. She brings hands-on experience navigating complex regulatory environments and hardware supply chains, and is passionate about supporting founders building in atoms, not just bits."
-         data-linkedin="https://linkedin.com/in/"
-         data-twitter="https://twitter.com/"
-         data-email="priya@99tartans.com">
-      <div class="person-avatar" style="background: #6b7c5a;"><span class="person-initials">PR</span></div>
-      <div class="person-name">Priya Raghavan</div>
-      <div class="person-role">Partner</div>
-      <div class="person-class">ECE '12</div>
+         data-name="Robert Schwartz"
+         data-role="Executive Director"
+         data-class="TPR '24"
+         data-img="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/a3694f94-f003-42b2-a6f7-b991c38fdac8/Rob.jpg"
+         data-linkedin="https://www.linkedin.com/in/robertlschwartz1/">
+      <div class="person-avatar"><img src="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/a3694f94-f003-42b2-a6f7-b991c38fdac8/Rob.jpg" alt="Robert Schwartz"></div>
+      <div class="person-name">Robert Schwartz</div>
+      <div class="person-role">Executive Director</div>
+      <div class="person-class">TPR '24</div>
     </div>
 
     <div class="person" role="button" tabindex="0"
          data-color="#5a6b7c"
-         data-name="David Park"
-         data-role="Partner"
-         data-class="Dietrich '11"
-         data-bio="David leads community and founder relations at 99 Tartans. With a background in design and behavioral economics, he helps portfolio companies refine their go-to-market strategy and brand positioning. He previously ran growth at a consumer fintech company and was a founding team member at a Y Combinator-backed startup. He believes the best investments start with authentic relationships."
-         data-linkedin="https://linkedin.com/in/"
-         data-twitter="https://twitter.com/"
-         data-email="david@99tartans.com">
-      <div class="person-avatar" style="background: #5a6b7c;"><span class="person-initials">DP</span></div>
-      <div class="person-name">David Park</div>
-      <div class="person-role">Partner</div>
-      <div class="person-class">Dietrich '11</div>
+         data-name="Max Hsiao"
+         data-role="Director"
+         data-class="TPR '27"
+         data-img="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/25508876-08f3-49f2-8856-616a46d73f3c/Max+Hsiao.jpg"
+         data-linkedin="https://www.linkedin.com/in/maxmhsiao/">
+      <div class="person-avatar"><img src="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/25508876-08f3-49f2-8856-616a46d73f3c/Max+Hsiao.jpg" alt="Max Hsiao"></div>
+      <div class="person-name">Max Hsiao</div>
+      <div class="person-role">Director</div>
+      <div class="person-class">TPR '27</div>
+    </div>
+
+    <div class="person" role="button" tabindex="0"
+         data-color="#6b5a4a"
+         data-name="Austin Lignell"
+         data-role="Director"
+         data-class="TPR '26"
+         data-img="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/9cc42253-835f-46b1-bc09-49e4e8ee36a6/Austin+Lignell.jpg"
+         data-linkedin="https://www.linkedin.com/in/austin-lignell/">
+      <div class="person-avatar"><img src="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/9cc42253-835f-46b1-bc09-49e4e8ee36a6/Austin+Lignell.jpg" alt="Austin Lignell"></div>
+      <div class="person-name">Austin Lignell</div>
+      <div class="person-role">Director</div>
+      <div class="person-class">TPR '26</div>
+    </div>
+
+    <div class="person" role="button" tabindex="0"
+         data-color="#5a5a7c"
+         data-name="Si Hyun Kim"
+         data-role="Director"
+         data-class="TPR '26"
+         data-img="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/2c525a6b-d554-4421-8d0d-5d932eaf0fd8/Si+Hyun+Kim.jpg"
+         data-linkedin="https://www.linkedin.com/in/kimsihyun/">
+      <div class="person-avatar"><img src="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/2c525a6b-d554-4421-8d0d-5d932eaf0fd8/Si+Hyun+Kim.jpg" alt="Si Hyun Kim"></div>
+      <div class="person-name">Si Hyun Kim</div>
+      <div class="person-role">Director</div>
+      <div class="person-class">TPR '26</div>
     </div>
 
     <div class="person" role="button" tabindex="0"
          data-color="#7c5a6b"
-         data-name="Elena Vasquez"
-         data-role="Venture Partner"
-         data-class="Heinz '14"
-         data-bio="Elena advises 99 Tartans on policy, impact investing, and civic tech. She is currently a senior fellow at a national policy institute and previously served in city government leading innovation initiatives. Her experience bridging the public and private sectors helps portfolio companies navigate government contracts, civic partnerships, and social impact metrics."
-         data-linkedin="https://linkedin.com/in/"
-         data-email="elena@99tartans.com">
-      <div class="person-avatar" style="background: #7c5a6b;"><span class="person-initials">EV</span></div>
-      <div class="person-name">Elena Vasquez</div>
-      <div class="person-role">Venture Partner</div>
-      <div class="person-class">Heinz '14</div>
+         data-name="David An"
+         data-role="MBA Partner"
+         data-class="TPR '27"
+         data-img="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/36b18206-8316-4629-9813-d235acce81f4/David+An.jpg"
+         data-linkedin="https://www.linkedin.com/in/davidzan/">
+      <div class="person-avatar"><img src="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/36b18206-8316-4629-9813-d235acce81f4/David+An.jpg" alt="David An"></div>
+      <div class="person-name">David An</div>
+      <div class="person-role">MBA Partner</div>
+      <div class="person-class">TPR '27</div>
+    </div>
+
+    <div class="person" role="button" tabindex="0"
+         data-color="#4a6b6b"
+         data-name="Steven Nerat"
+         data-role="MBA Partner"
+         data-class="TPR '27"
+         data-img="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/326dea92-b378-4414-aaa8-222443d804da/Steven+Nerat.jpg"
+         data-linkedin="https://www.linkedin.com/in/smnerat/">
+      <div class="person-avatar"><img src="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/326dea92-b378-4414-aaa8-222443d804da/Steven+Nerat.jpg" alt="Steven Nerat"></div>
+      <div class="person-name">Steven Nerat</div>
+      <div class="person-role">MBA Partner</div>
+      <div class="person-class">TPR '27</div>
+    </div>
+
+    <div class="person" role="button" tabindex="0"
+         data-color="#6b7c5a"
+         data-name="Louisa Bickford"
+         data-role="MBA Partner"
+         data-class="TPR '27"
+         data-img="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/38d2e842-46be-4b7a-bbec-fe6f51073ec2/Louisa+Bickford.jpg"
+         data-linkedin="https://www.linkedin.com/in/louisacbrown/">
+      <div class="person-avatar"><img src="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/38d2e842-46be-4b7a-bbec-fe6f51073ec2/Louisa+Bickford.jpg" alt="Louisa Bickford"></div>
+      <div class="person-name">Louisa Bickford</div>
+      <div class="person-role">MBA Partner</div>
+      <div class="person-class">TPR '27</div>
+    </div>
+
+    <div class="person" role="button" tabindex="0"
+         data-color="#8b7b6b"
+         data-name="Raahul Sriram"
+         data-role="PhD Partner"
+         data-class=""
+         data-img="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/744b38e0-0af3-402a-b3e5-2738ca1a0ca1/Raahul+Sriram.jpg"
+         data-linkedin="https://www.linkedin.com/in/raahul-sriram-88199312a/">
+      <div class="person-avatar"><img src="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/744b38e0-0af3-402a-b3e5-2738ca1a0ca1/Raahul+Sriram.jpg" alt="Raahul Sriram"></div>
+      <div class="person-name">Raahul Sriram</div>
+      <div class="person-role">PhD Partner</div>
+    </div>
+
+    <div class="person" role="button" tabindex="0"
+         data-color="#c83c2c"
+         data-name="Emmanuel George"
+         data-role="MS Partner"
+         data-class="ETIM '26"
+         data-img="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/2e36a5d3-a4aa-489d-a5d4-9e9e5506ccab/Emmanuel+George.jpg"
+         data-linkedin="https://www.linkedin.com/in/eageorge00/">
+      <div class="person-avatar"><img src="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/2e36a5d3-a4aa-489d-a5d4-9e9e5506ccab/Emmanuel+George.jpg" alt="Emmanuel George"></div>
+      <div class="person-name">Emmanuel George</div>
+      <div class="person-role">MS Partner</div>
+      <div class="person-class">ETIM '26</div>
     </div>
 
   </div>
 </div>
 
 <!-- ═══════════════════════════════════════
-     ADVISORS
+     PAST ASSOCIATES
      ═══════════════════════════════════════ -->
 <div class="team-section reveal">
-  <div class="team-section-label">Advisors</div>
-  <div class="team-grid">
-
-    <div class="person" role="button" tabindex="0"
-         data-color="#6b5a4a"
-         data-name="James Wright"
-         data-role="Advisor"
-         data-class="SCS '95"
-         data-bio="James is a serial entrepreneur and angel investor who has founded three companies in enterprise infrastructure, two of which went public. He advises 99 Tartans on deal sourcing, LP relations, and fund strategy. A longtime Pittsburgh advocate, he sits on the boards of several CMU-affiliated organizations and actively mentors first-time founders."
-         data-linkedin="https://linkedin.com/in/">
-      <div class="person-avatar" style="background: #6b5a4a;"><span class="person-initials">JW</span></div>
-      <div class="person-name">James Wright</div>
-      <div class="person-role">Advisor</div>
-      <div class="person-class">SCS '95</div>
-    </div>
-
-    <div class="person" role="button" tabindex="0"
-         data-color="#4a6b6b"
-         data-name="Nina Kowalski"
-         data-role="Advisor"
-         data-class="MCS '01"
-         data-bio="Nina is a veteran product executive who has led teams at three Fortune 500 technology companies. She specializes in scaling B2B SaaS products from early traction to market dominance. At 99 Tartans, she works closely with portfolio founders on product-market fit, pricing strategy, and building high-performing engineering teams."
-         data-linkedin="https://linkedin.com/in/"
-         data-twitter="https://twitter.com/">
-      <div class="person-avatar" style="background: #4a6b6b;"><span class="person-initials">NK</span></div>
-      <div class="person-name">Nina Kowalski</div>
-      <div class="person-role">Advisor</div>
-      <div class="person-class">MCS '01</div>
-    </div>
-
-    <div class="person" role="button" tabindex="0"
-         data-color="#5a5a7c"
-         data-name="Alex Kumar"
-         data-role="Advisor"
-         data-class="Tepper '04"
-         data-bio="Alex is a managing director at a global investment bank with two decades of experience in technology M&amp;A. He provides 99 Tartans portfolio companies with guidance on fundraising strategy, exit planning, and corporate development. His extensive network across institutional investors and strategic acquirers is an invaluable resource for the fund's most ambitious founders."
-         data-linkedin="https://linkedin.com/in/">
-      <div class="person-avatar" style="background: #5a5a7c;"><span class="person-initials">AK</span></div>
-      <div class="person-name">Alex Kumar</div>
-      <div class="person-role">Advisor</div>
-      <div class="person-class">Tepper '04</div>
-    </div>
-
+  <div class="team-section-label">Past Associates</div>
+  <div class="past-grid">
+    <div class="past-name">Victor Zhang <span>TPR '24</span></div>
+    <div class="past-name">Alejandra Rovirosa <span>TPR '22</span></div>
+    <div class="past-name">Lucy Luo <span>TPR '20</span></div>
+    <div class="past-name">Bhavana Savanth <span>TPR '25</span></div>
+    <div class="past-name">Abha Dalmia <span>TPR '23</span></div>
+    <div class="past-name">Vedant Tyagi <span>TPR '23</span></div>
+    <div class="past-name">Melissa Bizzari <span>TPR '21</span></div>
+    <div class="past-name">Brian Hayt <span>TPR '21</span></div>
+    <div class="past-name">Eric Su <span>TPR '23</span></div>
+    <div class="past-name">Ruben Tavakalov <span>TPR '24</span></div>
+    <div class="past-name">Peter Park <span>TPR '22</span></div>
+    <div class="past-name">Mickey Colombo <span>TPR '22</span></div>
+    <div class="past-name">Harrison Grimm <span>TPR '25</span></div>
+    <div class="past-name">Gaurav Mehra <span>TPR '23</span></div>
+    <div class="past-name">Lawrence J LaPorta <span>TPR '21</span></div>
+    <div class="past-name">Raul Meana <span>TPR '24</span></div>
+    <div class="past-name">Benjamin Stewart <span>TPR '25</span></div>
+    <div class="past-name">Julie Negussie <span>TPR '25</span></div>
+    <div class="past-name">Soroosh Demooei <span>TPR '24</span></div>
+    <div class="past-name">Afif Izzatullah <span>TPR '26</span></div>
+    <div class="past-name">Paul Grech <span>TPR '25</span></div>
+    <div class="past-name">Jess Zhu <span>TPR '25</span></div>
+    <div class="past-name">Suguru Isoda <span>TPR '23</span></div>
+    <div class="past-name">Maria Jose Fernandez <span>TPR '23</span></div>
+    <div class="past-name">Nisarg Doshi <span>CMU '24</span></div>
+    <div class="past-name">Geoffrey Root <span>Dietrich '18</span></div>
+    <div class="past-name">Kishan Patel <span>Dietrich '18</span></div>
+    <div class="past-name">Shubham Srivastava <span>MISM CMU '25</span></div>
+    <div class="past-name">Jasmine Cheng <span>CS '22</span></div>
+    <div class="past-name">Chesley Zhu <span>MBA '17</span></div>
+    <div class="past-name">Nidhisha Voonna <span>MIIPS CMU '25</span></div>
+    <div class="past-name">Sam Blake <span>MBA '17</span></div>
+    <div class="past-name">Will Sanders <span>Dietrich '14</span></div>
+    <div class="past-name">Kiran Kastury <span>TPR '26</span></div>
+    <div class="past-name">Andre Perkins <span>TPR '26</span></div>
   </div>
 </div>
 
@@ -939,8 +1046,22 @@ document.querySelectorAll('.person').forEach(card => {
     const d = card.dataset;
     const initials = getInitials(d.name || '??');
 
-    document.getElementById('modalAvatar').style.background = d.color || '#8b7b6b';
-    document.getElementById('modalInitials').textContent = initials;
+    const avatarEl = document.getElementById('modalAvatar');
+    const initialsEl = document.getElementById('modalInitials');
+    avatarEl.style.background = d.color || '#8b7b6b';
+    // Remove any previous photo
+    const oldImg = avatarEl.querySelector('img');
+    if (oldImg) oldImg.remove();
+    if (d.img) {
+      const img = document.createElement('img');
+      img.src = d.img;
+      img.alt = d.name || '';
+      avatarEl.appendChild(img);
+      initialsEl.style.display = 'none';
+    } else {
+      initialsEl.style.display = '';
+      initialsEl.textContent = initials;
+    }
     document.getElementById('modalName').textContent = d.name || '';
     document.getElementById('modalRole').textContent = d.role || '';
     document.getElementById('modalClass').textContent = d.class || '';

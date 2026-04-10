@@ -260,13 +260,18 @@ nav.scrolled {
   align-items: center;
   justify-content: center;
   margin-bottom: 1.2rem;
-  border: 1px solid var(--rule);
   transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
 }
 
 .company-card:hover .company-logo {
   background: var(--bg-alt);
+}
+
+.company-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .company-logo-text {
@@ -650,6 +655,8 @@ footer {
   <button class="filter-btn" data-filter="hardware">Hardware</button>
   <button class="filter-btn" data-filter="real-estate">Real Estate</button>
   <button class="filter-btn" data-filter="semiconductors">Semiconductors</button>
+  <button class="filter-btn" data-filter="food">Food &amp; Bev</button>
+  <button class="filter-btn" data-filter="aerospace">Aerospace</button>
 </div>
 
 <!-- ── Company Cards ── -->
@@ -657,143 +664,241 @@ footer {
   <div class="companies-grid reveal" id="companiesGrid">
 
     <div class="company-card" data-sector="software">
-      <div class="company-logo" style="background: #e8e4f0;"><span class="company-logo-text">Logo</span></div>
+      <div class="company-logo" style="background: #e8e4f0;"><img src="https://static1.squarespace.com/static/5bb54ec1d74562f1f67928be/608200d535d08840b1a4506e/66a7e9152e76644175c8572f/1722281736703/viral-moment-logo-sm2.png?format=500w" alt="ViralMoment"></div>
       <div class="company-name">ViralMoment</div>
       <div class="company-desc">AI-powered social media analytics for understanding trends and cultural movements at scale.</div>
       <div class="company-sector-tag">Software</div>
     </div>
 
     <div class="company-card" data-sector="software">
-      <div class="company-logo" style="background: #d9eae4;"><span class="company-logo-text">Logo</span></div>
+      <div class="company-logo" style="background: #d9eae4;"><img src="https://static1.squarespace.com/static/5bb54ec1d74562f1f67928be/608200d535d08840b1a4506e/66904adaca43796e34361daa/1722281788352/Curie+Logo.png?format=500w" alt="Curie"></div>
       <div class="company-name">Curie</div>
       <div class="company-desc">Intelligent tools for modern business operations and workflow automation.</div>
       <div class="company-sector-tag">Software</div>
     </div>
 
     <div class="company-card" data-sector="software">
-      <div class="company-logo" style="background: #f0e6d8;"><span class="company-logo-text">Logo</span></div>
+      <div class="company-logo" style="background: #f0e6d8;"><img src="https://static1.squarespace.com/static/5bb54ec1d74562f1f67928be/608200d535d08840b1a4506e/633b06fc6be16537d03ecb62/1721789552153/equa.jpg?format=500w" alt="Equa"></div>
       <div class="company-name">Equa</div>
       <div class="company-desc">Health and wellness technology empowering individuals to take control of their wellbeing.</div>
       <div class="company-sector-tag">Software</div>
     </div>
 
     <div class="company-card" data-sector="software">
-      <div class="company-logo" style="background: #dde5f0;"><span class="company-logo-text">Logo</span></div>
+      <div class="company-logo" style="background: #dde5f0;"><img src="https://static1.squarespace.com/static/5bb54ec1d74562f1f67928be/608200d535d08840b1a4506e/633b0556806b5f7877064e8a/1664812634990/Encore.jpg?format=500w" alt="Encore"></div>
       <div class="company-name">Encore</div>
       <div class="company-desc">Next-generation platform for live experiences and event management.</div>
       <div class="company-sector-tag">Software</div>
     </div>
 
     <div class="company-card" data-sector="software">
-      <div class="company-logo" style="background: #e4e0d6;"><span class="company-logo-text">Logo</span></div>
+      <div class="company-logo" style="background: #e4e0d6;"><img src="https://static1.squarespace.com/static/5bb54ec1d74562f1f67928be/608200d535d08840b1a4506e/633b02b2b0005d506b08a191/1664812296530/optionality.jpg?format=500w" alt="Optionality"></div>
       <div class="company-name">Optionality</div>
       <div class="company-desc">Financial technology tools for smarter investment decisions and portfolio management.</div>
       <div class="company-sector-tag">Software</div>
     </div>
 
     <div class="company-card" data-sector="software">
-      <div class="company-logo" style="background: #f2ddd8;"><span class="company-logo-text">Logo</span></div>
+      <div class="company-logo" style="background: #f2ddd8;"><img src="https://static1.squarespace.com/static/5bb54ec1d74562f1f67928be/608200d535d08840b1a4506e/62a223744c09cb26e26bc0bd/1664812701494/WeChat+Image_20220621171728.png?format=500w" alt="Revvo"></div>
       <div class="company-name">Revvo</div>
       <div class="company-desc">AI-powered tire intelligence platform for fleet safety and operational efficiency.</div>
       <div class="company-sector-tag">Software</div>
     </div>
 
     <div class="company-card" data-sector="software">
-      <div class="company-logo" style="background: #d6dfe8;"><span class="company-logo-text">Logo</span></div>
+      <div class="company-logo" style="background: #d6dfe8;"><img src="https://static1.squarespace.com/static/5bb54ec1d74562f1f67928be/608200d535d08840b1a4506e/62a2265f7c67e74862ada68b/1664812728161/WeChat+Image_20220621171714.png?format=500w" alt="Mach9 Robotics"></div>
       <div class="company-name">Mach9 Robotics</div>
       <div class="company-desc">Geospatial data processing for infrastructure and autonomous systems.</div>
       <div class="company-sector-tag">Software</div>
     </div>
 
     <div class="company-card" data-sector="software">
-      <div class="company-logo" style="background: #e0e8d6;"><span class="company-logo-text">Logo</span></div>
+      <div class="company-logo" style="background: #e0e8d6;"><img src="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/1620274514726-PB342LSLRNAE2E6VF5J3/blastpoint-logo.png?format=500w" alt="Blastpoint"></div>
       <div class="company-name">Blastpoint</div>
       <div class="company-desc">Customer intelligence using AI to help utilities and enterprises understand their customers.</div>
       <div class="company-sector-tag">Software</div>
     </div>
 
-    <div class="company-card" data-sector="software">
-      <div class="company-logo" style="background: #ebe4d6;"><span class="company-logo-text">Logo</span></div>
+    <div class="company-card" data-sector="robotics">
+      <div class="company-logo" style="background: #ebe4d6;"><img src="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/1643000034704-XLG1SNYIAPTF6OBF9H3E/ddl.png?format=500w" alt="Digital Dream Labs"></div>
       <div class="company-name">Digital Dream Labs</div>
       <div class="company-desc">Consumer robotics and entertainment — the makers of Vector and Cozmo robots.</div>
-      <div class="company-sector-tag">Software</div>
+      <div class="company-sector-tag">Robotics</div>
     </div>
 
     <div class="company-card" data-sector="robotics">
-      <div class="company-logo" style="background: #d8dce8;"><span class="company-logo-text">Logo</span></div>
+      <div class="company-logo" style="background: #d8dce8;"><img src="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/1654306530786-JCTWHLNF5WYHS2Y2ZDS5/Finish+Logo+Square_+Blue.png?format=500w" alt="Finish Robotics"></div>
       <div class="company-name">Finish Robotics</div>
       <div class="company-desc">Autonomous robotic systems for construction finishing and surface preparation.</div>
       <div class="company-sector-tag">Robotics</div>
     </div>
 
     <div class="company-card" data-sector="robotics">
-      <div class="company-logo" style="background: #e8e0d6;"><span class="company-logo-text">Logo</span></div>
+      <div class="company-logo" style="background: #e8e0d6;"><img src="https://static1.squarespace.com/static/5bb54ec1d74562f1f67928be/608200d535d08840b1a4506e/63344d3f1b509c06edac26d0/1664472876023/ESTAT.png?format=500w" alt="ESTAT Actuation"></div>
       <div class="company-name">ESTAT Actuation</div>
       <div class="company-desc">Electroadhesive clutch technology for next-generation robotic actuation and haptics.</div>
       <div class="company-sector-tag">Robotics</div>
     </div>
 
     <div class="company-card" data-sector="robotics">
-      <div class="company-logo" style="background: #dde8e4;"><span class="company-logo-text">Logo</span></div>
+      <div class="company-logo" style="background: #dde8e4;"><img src="https://static1.squarespace.com/static/5bb54ec1d74562f1f67928be/608200d535d08840b1a4506e/62a22825de0be20ad6444efd/1664812757873/WeChat+Image_20220621171732.png?format=500w" alt="Locomation"></div>
       <div class="company-name">Locomation</div>
       <div class="company-desc">Autonomous trucking technology enabling human-guided platooning for long-haul freight.</div>
       <div class="company-sector-tag">Robotics</div>
     </div>
 
     <div class="company-card" data-sector="robotics">
-      <div class="company-logo" style="background: #d6e4d8;"><span class="company-logo-text">Logo</span></div>
+      <div class="company-logo" style="background: #d6e4d8;"><img src="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/1619134005771-WQYHRWQS2SE6U6A5ZA5R/FifthSeason.jpg?format=500w" alt="Fifth Season"></div>
       <div class="company-name">Fifth Season</div>
       <div class="company-desc">Automated indoor farming using robotics and AI to grow fresh produce year-round.</div>
       <div class="company-sector-tag">Robotics</div>
     </div>
 
     <div class="company-card" data-sector="health">
-      <div class="company-logo" style="background: #f0e0e4;"><span class="company-logo-text">Logo</span></div>
+      <div class="company-logo" style="background: #f0e0e4;"><img src="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/1722279819205-D5HV7T26MUDJ2WT3YN88/lionpose_logo.jpeg?format=500w" alt="Lion Pose"></div>
       <div class="company-name">Lion Pose</div>
       <div class="company-desc">Digital health and wellness platform focused on personalized wellbeing programs.</div>
       <div class="company-sector-tag">Health</div>
     </div>
 
     <div class="company-card" data-sector="health">
-      <div class="company-logo" style="background: #e4ddf0;"><span class="company-logo-text">Logo</span></div>
+      <div class="company-logo" style="background: #e4ddf0;"><img src="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/1642975688100-HNJYS520JASXZCE7CFU6/CoPilot.png?format=500w" alt="CoPilot"></div>
       <div class="company-name">CoPilot</div>
       <div class="company-desc">AI-driven personal fitness coaching connecting users with remote personal trainers.</div>
       <div class="company-sector-tag">Health</div>
     </div>
 
     <div class="company-card" data-sector="medtech">
-      <div class="company-logo" style="background: #d8e0e8;"><span class="company-logo-text">Logo</span></div>
+      <div class="company-logo" style="background: #d8e0e8;"><img src="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/1769360586430/advanced_optronics_logo.jpeg?format=500w" alt="Advanced Optronics"></div>
       <div class="company-name">Advanced Optronics</div>
       <div class="company-desc">Optical and photonic solutions for advanced medical imaging and diagnostic systems.</div>
       <div class="company-sector-tag">MedTech</div>
     </div>
 
     <div class="company-card" data-sector="hardware">
-      <div class="company-logo" style="background: #e8e4d6;"><span class="company-logo-text">Logo</span></div>
+      <div class="company-logo" style="background: #e8e4d6;"><img src="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/1643001492728-EYRONAM6WVVZ0HJ77QA0/agot.png?format=500w" alt="Agot AI"></div>
       <div class="company-name">Agot AI</div>
       <div class="company-desc">Computer vision for quick-service restaurants — ensuring order accuracy in real time.</div>
       <div class="company-sector-tag">Hardware</div>
     </div>
 
     <div class="company-card" data-sector="real-estate">
-      <div class="company-logo" style="background: #dde4d8;"><span class="company-logo-text">Logo</span></div>
+      <div class="company-logo" style="background: #dde4d8;"><img src="https://static1.squarespace.com/static/5bb54ec1d74562f1f67928be/608200d535d08840b1a4506e/633afff4c694027a4a650356/1664811490367/module.jpg?format=500w" alt="Module Design"></div>
       <div class="company-name">Module Design</div>
       <div class="company-desc">Modular construction technology for faster, more sustainable building development.</div>
       <div class="company-sector-tag">Real Estate</div>
     </div>
 
     <div class="company-card" data-sector="real-estate">
-      <div class="company-logo" style="background: #e0d8e8;"><span class="company-logo-text">Logo</span></div>
+      <div class="company-logo" style="background: #e0d8e8;"><img src="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/1642623384853-ING5OG85JLE907U7U3BL/fractional.png?format=500w" alt="Fractional"></div>
       <div class="company-name">Fractional</div>
       <div class="company-desc">Making real estate investment accessible through fractional ownership technology.</div>
       <div class="company-sector-tag">Real Estate</div>
     </div>
 
     <div class="company-card" data-sector="semiconductors">
-      <div class="company-logo" style="background: #d6d8e4;"><span class="company-logo-text">Logo</span></div>
+      <div class="company-logo" style="background: #d6d8e4;"><img src="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/1642610945705-KY5AU9Z4QYODJ7CZYGMS/Arieca-black-background.png?format=500w" alt="Arieca"></div>
       <div class="company-name">Arieca</div>
       <div class="company-desc">Next-generation semiconductor solutions for high-performance computing applications.</div>
       <div class="company-sector-tag">Semiconductors</div>
+    </div>
+
+    <div class="company-card" data-sector="robotics">
+      <div class="company-logo" style="background: #d8e4d6;"><img src="https://static1.squarespace.com/static/5bb54ec1d74562f1f67928be/608200d535d08840b1a4506e/61e838138b655c0210f14372/1655846612990/Barnstorm_20logo_20_new__20icon_20only.png?format=500w" alt="Barnstorm Agtech"></div>
+      <div class="company-name">Barnstorm Agtech</div>
+      <div class="company-desc">Agricultural robotics for automated crop management and precision farming.</div>
+      <div class="company-sector-tag">Robotics</div>
+    </div>
+
+    <div class="company-card" data-sector="medtech">
+      <div class="company-logo" style="background: #e4d8e0;"><img src="https://images.squarespace-cdn.com/content/v1/5bb54ec1d74562f1f67928be/1620274352952-C1Z92T0UWY8LZLD70L2K/logo.png?format=500w" alt="sovaSage"></div>
+      <div class="company-name">sovaSage</div>
+      <div class="company-desc">Medical technology for sleep health diagnostics and monitoring.</div>
+      <div class="company-sector-tag">MedTech</div>
+    </div>
+
+    <div class="company-card" data-sector="food">
+      <div class="company-logo" style="background: #e8ddd0;"><img src="https://static1.squarespace.com/static/5bb54ec1d74562f1f67928be/608200d535d08840b1a4506e/608750100f075c12378e6808/1619706676894/Aurochs%2BLogo%2B-%2BFull.png?format=500w" alt="Aurochs Brewing"></div>
+      <div class="company-name">Aurochs Brewing</div>
+      <div class="company-desc">Craft brewing company specializing in gluten-free beer made from ancient grains.</div>
+      <div class="company-sector-tag">Food &amp; Bev</div>
+    </div>
+
+    <div class="company-card" data-sector="robotics">
+      <div class="company-logo" style="background: #d6dde8;"><img src="https://static1.squarespace.com/static/5bb54ec1d74562f1f67928be/608200d535d08840b1a4506e/60874fd3c13418399d2fc8fc/1719416250768/gather.jpg?format=500w" alt="Gather AI"></div>
+      <div class="company-name">Gather AI</div>
+      <div class="company-desc">Autonomous drone-based inventory monitoring for warehouses and supply chains.</div>
+      <div class="company-sector-tag">Robotics</div>
+    </div>
+
+    <div class="company-card" data-sector="software">
+      <div class="company-logo" style="background: #dde8d6;"><img src="https://static1.squarespace.com/static/5bb54ec1d74562f1f67928be/608200d535d08840b1a4506e/60874f518d112622deb7156b/1647018363057/LeanFM+logo+%28update%29.png?format=500w" alt="LeanFM Technologies"></div>
+      <div class="company-name">LeanFM Technologies</div>
+      <div class="company-desc">Facilities management software using IoT and data analytics for building operations.</div>
+      <div class="company-sector-tag">Software</div>
+    </div>
+
+    <div class="company-card" data-sector="software">
+      <div class="company-logo" style="background: #e0dde8;"><img src="https://static1.squarespace.com/static/5bb54ec1d74562f1f67928be/608200d535d08840b1a4506e/60875088d1d63b653fa8f90c/1620274957872/192+%281%29.png?format=500w" alt="Onyx Labs"></div>
+      <div class="company-name">Onyx Labs</div>
+      <div class="company-desc">Connected communication platform for hands-free voice-first devices.</div>
+      <div class="company-sector-tag">Software</div>
+    </div>
+
+    <div class="company-card" data-sector="medtech">
+      <div class="company-logo" style="background: #d8e0e4;"><img src="https://static1.squarespace.com/static/5bb54ec1d74562f1f67928be/608200d535d08840b1a4506e/608208e106615f1c7cf8b5b1/1647954128783/Forest+Devices-new.png?format=500w" alt="Forest Devices"></div>
+      <div class="company-name">Forest Devices</div>
+      <div class="company-desc">Portable medical device for rapid stroke detection in pre-hospital settings.</div>
+      <div class="company-sector-tag">MedTech</div>
+    </div>
+
+    <div class="company-card" data-sector="robotics">
+      <div class="company-logo" style="background: #d6e0e8;"><img src="https://static1.squarespace.com/static/5bb54ec1d74562f1f67928be/608200d535d08840b1a4506e/608207f885a96b7c803266c2/1674930406735/Duality2023.png?format=500w" alt="Duality Robotics"></div>
+      <div class="company-name">Duality Robotics</div>
+      <div class="company-desc">Digital twin simulation platform for robotics and autonomous systems development.</div>
+      <div class="company-sector-tag">Robotics</div>
+    </div>
+
+    <div class="company-card" data-sector="aerospace">
+      <div class="company-logo" style="background: #ddd8e8;"><img src="https://static1.squarespace.com/static/5bb54ec1d74562f1f67928be/608200d535d08840b1a4506e/60820867c862690e3e486e53/1620274901736/boom.jpg?format=500w" alt="Boom Supersonic"></div>
+      <div class="company-name">Boom Supersonic</div>
+      <div class="company-desc">Developing Overture, the world's fastest commercial airliner for sustainable supersonic travel.</div>
+      <div class="company-sector-tag">Aerospace</div>
+    </div>
+
+    <div class="company-card" data-sector="software">
+      <div class="company-logo" style="background: #e4e0d6;"><img src="https://static1.squarespace.com/static/5bb54ec1d74562f1f67928be/608200d535d08840b1a4506e/6082076660fde83115b32527/1620274946895/intellipse.jpg?format=500w" alt="Intellipse"></div>
+      <div class="company-name">Intellipse</div>
+      <div class="company-desc">AI-powered video analytics for real-time security and surveillance intelligence.</div>
+      <div class="company-sector-tag">Software</div>
+    </div>
+
+    <div class="company-card" data-sector="software">
+      <div class="company-logo" style="background: #d8e4e0;"><img src="https://static1.squarespace.com/static/5bb54ec1d74562f1f67928be/608200d535d08840b1a4506e/6082071d35519f7f4c101bef/1620274946889/40214100.jpg?format=500w" alt="Sila"></div>
+      <div class="company-name">Sila</div>
+      <div class="company-desc">Payment infrastructure APIs enabling businesses to build compliant fintech products.</div>
+      <div class="company-sector-tag">Software</div>
+    </div>
+
+    <div class="company-card" data-sector="robotics">
+      <div class="company-logo" style="background: #e0d8d6;"><img src="https://static1.squarespace.com/static/5bb54ec1d74562f1f67928be/608200d535d08840b1a4506e/60820490b4503e44540e21cb/1654277242247/iamrobotics.png?format=500w" alt="I AM Robotics"></div>
+      <div class="company-name">I AM Robotics</div>
+      <div class="company-desc">Autonomous mobile robots for piece-picking fulfillment in warehouses and distribution centers.</div>
+      <div class="company-sector-tag">Robotics</div>
+    </div>
+
+    <div class="company-card" data-sector="software">
+      <div class="company-logo" style="background: #e8e0dd;"><img src="https://static1.squarespace.com/static/5bb54ec1d74562f1f67928be/608200d535d08840b1a4506e/60820372d541e2414bf1950a/1620274723616/27540824_433244940426256_6251518629368967367_n.png?format=500w" alt="Truefluence"></div>
+      <div class="company-name">Truefluence</div>
+      <div class="company-desc">Influencer marketing platform connecting brands with authentic content creators.</div>
+      <div class="company-sector-tag">Software</div>
+    </div>
+
+    <div class="company-card" data-sector="software">
+      <div class="company-logo" style="background: #d6e8dd;"><img src="https://static1.squarespace.com/static/5bb54ec1d74562f1f67928be/608200d535d08840b1a4506e/6082012ec005a54cfe3da66a/1654277361052/Gridwise.png?format=500w" alt="Gridwise"></div>
+      <div class="company-name">Gridwise</div>
+      <div class="company-desc">Data-driven analytics app helping gig economy drivers maximize their earnings.</div>
+      <div class="company-sector-tag">Software</div>
     </div>
 
   </div>

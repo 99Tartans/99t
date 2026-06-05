@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FAQ — 99 Tartans</title>
-<meta name="description" content="Frequently asked questions about investing with 99 Tartans — a CMU alumni angel syndicate backing Carnegie Mellon founders.">
+<title>Events — 99 Tartans</title>
+<meta name="description" content="Fireside chats and gatherings hosted by 99 Tartans — bringing together thought leaders shaping technology across industries.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -182,14 +182,14 @@ nav.scrolled {
   font-weight: 700;
   line-height: 1.08;
   letter-spacing: -0.025em;
-  max-width: 700px;
+  max-width: 800px;
 }
 
 .page-header-desc {
   font-size: 1rem;
   font-weight: 300;
   color: var(--text-mid);
-  max-width: 520px;
+  max-width: 620px;
   line-height: 1.7;
   margin-top: 1.5rem;
 }
@@ -207,46 +207,219 @@ nav.scrolled {
 }
 
 /* ═══════════════════════════════════════
-   FAQ GRID
+   EVENTS SECTIONS
    ═══════════════════════════════════════ */
-.faq-section {
-  padding: 0 2.5rem 7rem;
+.events-section {
+  padding: 0 2.5rem 5rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.faq-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-}
-
-.faq-item {
+.section-label {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
   border-top: 1px solid var(--rule);
-  padding: 2rem 0;
-  padding-right: 3rem;
+  padding-top: 2rem;
+  margin-bottom: 2.5rem;
 }
 
-.faq-item:nth-child(even) {
-  padding-left: 3rem;
-  padding-right: 0;
-  border-left: 1px solid var(--rule);
-}
-
-.faq-q {
+.section-label-title {
   font-family: var(--font);
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 0.7rem;
-  line-height: 1.4;
+  font-size: 0.7rem;
+  color: var(--text-light);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.faq-a {
-  font-size: 0.87rem;
+.section-label-count {
+  font-family: var(--font);
+  font-size: 0.7rem;
+  color: var(--text-light);
+  letter-spacing: 0.05em;
+}
+
+/* ── Event card ── */
+.event-card {
+  display: grid;
+  grid-template-columns: 180px 1fr auto;
+  gap: 3rem;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--rule);
+  align-items: start;
+  transition: padding 0.3s ease;
+}
+
+.event-card:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.event-date {
+  font-family: var(--font);
+}
+
+.event-date-day {
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--text);
+}
+
+.event-date-month {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  margin-top: 0.5rem;
+}
+
+.event-date-year {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin-top: 0.2rem;
+  letter-spacing: 0.05em;
+}
+
+.event-body {
+  max-width: 560px;
+}
+
+.event-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  border: 1px solid var(--rule);
+  padding: 0.3rem 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.event-tag--past {
+  color: var(--text-light);
+}
+
+.event-title {
+  font-family: var(--font);
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.event-speaker {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-mid);
+  margin-bottom: 1rem;
+}
+
+.event-desc {
+  font-size: 0.9rem;
   font-weight: 300;
   color: var(--text-mid);
   line-height: 1.65;
+  margin-bottom: 1.2rem;
+}
+
+.event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.78rem;
+  color: var(--text-light);
+}
+
+.event-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.event-meta-item svg {
+  width: 13px;
+  height: 13px;
+  stroke: var(--text-light);
+  flex-shrink: 0;
+}
+
+.event-action {
+  align-self: center;
+}
+
+.event-action a {
+  font-family: var(--font);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.9rem 1.6rem;
+  border: 1px solid var(--text);
+  color: var(--text);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.event-action a:hover {
+  background: var(--text);
+  color: var(--surface);
+}
+
+.event-action--past {
+  font-size: 0.7rem;
+  color: var(--text-light);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ── Empty state for Upcoming ── */
+.empty-state {
+  padding: 4rem 0 3rem;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  text-align: center;
+}
+
+.empty-state-title {
+  font-family: var(--font);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.empty-state-desc {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  font-weight: 300;
+  max-width: 460px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.65;
+}
+
+.empty-state-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.2rem;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.empty-state-cta:hover {
+  color: var(--accent-hover);
+  border-color: var(--accent-hover);
 }
 
 /* ═══════════════════════════════════════
@@ -432,20 +605,24 @@ footer {
 
   .page-header { padding: 8rem 1.5rem 3rem; }
 
-  .faq-section { padding: 0 1.5rem 5rem; }
+  .events-section { padding: 0 1.5rem 4rem; }
 
-  .faq-grid {
+  .event-card {
     grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding: 2rem 0;
   }
 
-  .faq-item {
-    padding-right: 0;
+  .event-date {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
   }
 
-  .faq-item:nth-child(even) {
-    padding-left: 0;
-    border-left: none;
-  }
+  .event-date-day { font-size: 1.6rem; }
+  .event-date-month, .event-date-year { margin-top: 0; }
+
+  .event-action { align-self: flex-start; }
 
   .cta-band { padding: 4rem 1.5rem; }
 
@@ -478,8 +655,8 @@ footer {
     <li><a href="about.html" onclick="closeNav()">About</a></li>
     <li><a href="portfolio.html" onclick="closeNav()">Portfolio</a></li>
     <li><a href="team.html" onclick="closeNav()">Team</a></li>
-    <li><a href="events.html" onclick="closeNav()">Events</a></li>
-    <li><a href="faq.html" class="active" onclick="closeNav()">FAQ</a></li>
+    <li><a href="events.html" class="active" onclick="closeNav()">Events</a></li>
+    <li><a href="faq.html" onclick="closeNav()">FAQ</a></li>
     <li><a href="contact.html" onclick="closeNav()">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -493,68 +670,78 @@ footer {
 
 <!-- ── Page Header ── -->
 <div class="page-header reveal">
-  <div class="page-header-label">FAQ</div>
-  <h1>Frequently asked.</h1>
-  <p class="page-header-desc">Everything you need to know about investing with 99 Tartans. Can't find your answer? Reach out at <a href="mailto:hello@99Tartans.com">hello@99Tartans.com</a>.</p>
+  <div class="page-header-label">Events</div>
+  <h1>Fireside chats &amp; gatherings.</h1>
+  <p class="page-header-desc">As part of our efforts to bring together thought leaders shaping technology across industries, we host a series of virtual and in-person fireside chats. Events are open to 99 Tartans members, CMU students, faculty, and staff. Questions? <a href="mailto:hello@99Tartans.com">hello@99Tartans.com</a>.</p>
 </div>
 
-<!-- ── FAQ Grid ── -->
-<div class="faq-section">
-  <div class="faq-grid reveal" id="faqGrid">
-
-    <div class="faq-item">
-      <div class="faq-q">Who can join 99 Tartans?</div>
-      <div class="faq-a">Open to all CMU alumni who are accredited to invest in non-publicly traded securities.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">What is the minimum investment?</div>
-      <div class="faq-a">$5,000 per deal. All investments are opt-in, deal by deal, at your discretion.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">How are investments structured?</div>
-      <div class="faq-a">For each deal, a new LLC is created consisting of the subset of members participating.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Are there any fees?</div>
-      <div class="faq-a">No membership fees from 99TAA. When you invest in a deal, AngelList charges standard SPV setup and administration fees at the time you wire. 20% carry on returns, reduced to 10% above $25K.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Where do deals come from?</div>
-      <div class="faq-a">Sourced from members who have mentored startups and believe they're ready. Some apply directly.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Only Pittsburgh-based companies?</div>
-      <div class="faq-a">No. We invest in any U.S.-based company with CMU ties, regardless of location.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">What are typical check sizes?</div>
-      <div class="faq-a">$100K–$150K into seed rounds of $500K–$1M via SAFEs, convertible notes, or preferred stock.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">What post-close support exists?</div>
-      <div class="faq-a">A managing member serves as primary founder contact. AngelList manages tax filings and K-1 distribution through Belltower.</div>
-    </div>
-
+<!-- ── Upcoming ── -->
+<section class="events-section">
+  <div class="section-label reveal">
+    <span class="section-label-title">Upcoming</span>
+    <span class="section-label-count">None scheduled</span>
   </div>
-</div>
+
+  <div class="empty-state reveal">
+    <div class="empty-state-title">No events on the calendar right now.</div>
+    <div class="empty-state-desc">We're planning the next fireside. Email us to be notified when the next one is announced.</div>
+    <a href="mailto:hello@99Tartans.com?subject=Notify%20me%20about%20upcoming%20events" class="empty-state-cta">
+      Get on the list →
+    </a>
+  </div>
+</section>
+
+<!-- ── Past Events ── -->
+<section class="events-section">
+  <div class="section-label reveal">
+    <span class="section-label-title">Past Events</span>
+    <span class="section-label-count">01</span>
+  </div>
+
+  <div class="event-card reveal">
+    <div class="event-date">
+      <div class="event-date-day">29</div>
+      <div class="event-date-month">January</div>
+      <div class="event-date-year">2026</div>
+    </div>
+
+    <div class="event-body">
+      <span class="event-tag event-tag--past">Fireside Chat · Virtual</span>
+      <h2 class="event-title">Fireside Chat featuring Aurora Innovation</h2>
+      <div class="event-speaker">With Chris Urmson — Co-founder &amp; CEO, Aurora</div>
+      <p class="event-desc">Aurora develops autonomous driving technology — most notably for heavy-duty freight trucks through its Aurora Driver system. The conversation covered how Aurora is bringing hardware, software, and AI together to make freight transportation safer, more efficient, and more reliable.</p>
+      <div class="event-meta">
+        <div class="event-meta-item">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2.5" y="3.5" width="11" height="10" rx="1" stroke-width="1.2"/><path d="M2.5 6.5h11M5.5 2v3M10.5 2v3" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Jan 29, 2026
+        </div>
+        <div class="event-meta-item">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="6.5" r="2.5" stroke-width="1.2"/><path d="M8 14s5-4.5 5-8a5 5 0 0 0-10 0c0 3.5 5 8 5 8z" stroke-width="1.2" stroke-linejoin="round"/></svg>
+          Virtual · Pittsburgh
+        </div>
+        <div class="event-meta-item">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 4.5h10v7H3z" stroke-width="1.2"/><path d="M3 4.5l5 4 5-4" stroke-width="1.2" stroke-linejoin="round"/></svg>
+          Members &amp; CMU community
+        </div>
+      </div>
+    </div>
+
+    <div class="event-action">
+      <span class="event-action--past">Concluded</span>
+    </div>
+  </div>
+</section>
 
 <!-- ── CTA Band ── -->
 <div class="cta-band">
   <div class="cta-band-inner reveal">
     <div class="cta-band-text">
-      <h2>Still have questions? Let's talk.</h2>
-      <p>Reach out and we'll get back to you within a few days.</p>
+      <h2>Want to speak — or host the next one?</h2>
+      <p>We're always looking for founders, operators, and researchers to feature.</p>
     </div>
     <div class="cta-band-actions">
-      <a href="contact.html" class="btn btn-dark">
-        Contact us
+      <a href="mailto:hello@99Tartans.com?subject=Event%20idea%20%2F%20speaker%20interest" class="btn btn-dark">
+        Pitch an event
       </a>
       <a href="about.html" class="btn btn-outline">
         Learn more
@@ -629,28 +816,6 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
 reveals.forEach(el => observer.observe(el));
-
-// ── Stagger grid children ──
-const grids = document.querySelectorAll('.faq-grid');
-const gridObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      Array.from(entry.target.children).forEach((child, i) => {
-        child.style.opacity = '0';
-        child.style.transform = 'translateY(16px)';
-        child.style.transition = `opacity 0.5s ease ${i * 0.04}s, transform 0.5s ease ${i * 0.04}s`;
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            child.style.opacity = '1';
-            child.style.transform = 'translateY(0)';
-          });
-        });
-      });
-      gridObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.05 });
-grids.forEach(g => gridObserver.observe(g));
 </script>
 
 </body>

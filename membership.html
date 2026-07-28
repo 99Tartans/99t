@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample Membership Agreement — 99 Tartans</title>
+<meta name="description" content="A sample of the 99 Tartans Alumni Angels Membership Agreement — illustrative terms of membership for CMU alumni angel investors.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #fafafa;
+  --bg-alt: #f4f4f5;
+  --surface: #ffffff;
+  --text: #18181b;
+  --text-mid: #52525b;
+  --text-light: #a1a1aa;
+  --accent: #18181b;
+  --accent-hover: #2563eb;
+  --rule: #e4e4e7;
+  --font: 'Inter', -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--surface);
+}
+
+/* ═══════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════ */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.5rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(250, 250, 250, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  transition: padding 0.4s ease;
+}
+
+nav.scrolled {
+  padding: 1rem 2.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.nav-logo {
+  font-family: var(--font);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.nav-center {
+  display: flex;
+  gap: 1.8rem;
+  list-style: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-center a {
+  font-family: var(--font);
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--text-mid);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  letter-spacing: 0.01em;
+}
+
+.nav-center a:hover,
+.nav-center a.active {
+  color: var(--text);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-meta {
+  font-family: var(--font);
+  font-size: 0.82rem;
+  color: var(--text-light);
+}
+
+.nav-cta {
+  font-family: var(--font);
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-cta:hover {
+  color: var(--accent-hover);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 26px;
+  height: 18px;
+  position: relative;
+  z-index: 110;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: var(--text);
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle span:nth-child(1) { top: 0; }
+.nav-toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.nav-toggle span:nth-child(3) { bottom: 0; }
+
+.nav-toggle.active span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
+
+/* ═══════════════════════════════════════
+   PAGE HEADER
+   ═══════════════════════════════════════ */
+.page-header {
+  padding: 10rem 2.5rem 3rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page-header-label {
+  font-family: var(--font);
+  font-size: 0.7rem;
+  color: var(--text-light);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.page-header h1 {
+  font-family: var(--font);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  max-width: 720px;
+}
+
+.page-header-desc {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--text-mid);
+  max-width: 640px;
+  line-height: 1.7;
+  margin-top: 1.5rem;
+}
+
+.page-header-meta {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  margin-top: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+/* ═══════════════════════════════════════
+   LEGAL DOCUMENT
+   ═══════════════════════════════════════ */
+.doc {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2.5rem 6rem;
+}
+
+.doc-intro {
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: var(--text-mid);
+  line-height: 1.8;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.doc-def {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.doc-def h2,
+.doc-section > h2 {
+  font-family: var(--font);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  line-height: 1.3;
+}
+
+.doc-section {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.doc-section h3 {
+  font-family: var(--font);
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 1.75rem 0 0.6rem;
+  line-height: 1.4;
+}
+
+.doc-section h3:first-of-type {
+  margin-top: 0;
+}
+
+.doc-section p,
+.doc-def p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--text-mid);
+  line-height: 1.8;
+  margin-bottom: 0.9rem;
+}
+
+.doc-section p:last-child,
+.doc-def p:last-child {
+  margin-bottom: 0;
+}
+
+.doc-list {
+  list-style: none;
+  margin: 0.4rem 0 0.9rem;
+}
+
+.doc-list li {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--text-mid);
+  line-height: 1.75;
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.6rem;
+}
+
+.doc-list li::before {
+  content: "";
+  position: absolute;
+  left: 0.15rem;
+  top: 0.7rem;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--text-light);
+}
+
+.doc-list.lettered {
+  counter-reset: item;
+}
+
+.doc-list.lettered li {
+  padding-left: 1.9rem;
+}
+
+.doc-list.lettered li::before {
+  content: counter(item, lower-alpha) ".";
+  counter-increment: item;
+  background: none;
+  width: auto;
+  height: auto;
+  top: 0;
+  left: 0.15rem;
+  color: var(--text-light);
+  font-weight: 400;
+}
+
+.doc-list strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.callout {
+  background: var(--bg-alt);
+  border-left: 2px solid var(--text);
+  padding: 1.25rem 1.5rem;
+  margin: 1.25rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.callout p {
+  margin: 0;
+  font-size: 0.87rem;
+  color: var(--text-mid);
+}
+
+.callout strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ── Acceptance block ── */
+.acceptance {
+  padding: 3rem 0 0;
+}
+
+.acceptance-note {
+  font-family: var(--font);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.7;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-bottom: 2.25rem;
+}
+
+.sign-field {
+  margin-bottom: 1.75rem;
+}
+
+.sign-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-light);
+  margin-bottom: 0.6rem;
+}
+
+.sign-line {
+  border-bottom: 1px solid var(--rule);
+  height: 1.6rem;
+}
+
+/* ═══════════════════════════════════════
+   CTA BAND
+   ═══════════════════════════════════════ */
+.cta-band {
+  background: var(--bg);
+  padding: 5rem 2.5rem;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.cta-band-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+
+.cta-band-text h2 {
+  font-family: var(--font);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+
+.cta-band-text p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--text-mid);
+}
+
+.cta-band-actions {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.btn {
+  font-family: var(--font);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-dark {
+  background: var(--text);
+  color: var(--surface);
+}
+
+.btn-dark:hover {
+  background: var(--accent-hover);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--rule);
+}
+
+.btn-outline:hover {
+  border-color: var(--text);
+}
+
+/* ═══════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════ */
+footer {
+  background: var(--bg);
+  color: var(--text-mid);
+  padding: 3rem 2.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left {
+  font-family: var(--font);
+  font-size: 0.7rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+}
+
+.footer-left a {
+  color: var(--text-mid);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-left a:hover {
+  color: var(--accent-hover);
+}
+
+.footer-right {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-right a {
+  font-family: var(--font);
+  font-size: 0.7rem;
+  color: var(--text-light);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.footer-right a:hover {
+  color: var(--accent-hover);
+}
+
+/* ═══════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════ */
+@media (max-width: 768px) {
+  nav { padding: 1.2rem 1.5rem; }
+
+  .nav-center {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transform: none;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 105;
+  }
+
+  .nav-center.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .nav-center a {
+    font-size: 1.2rem;
+    color: var(--text-mid);
+  }
+
+  .nav-meta { display: none; }
+  .nav-cta { display: none; }
+  .nav-toggle { display: block; }
+
+  .page-header { padding: 8rem 1.5rem 2.5rem; }
+
+  .doc { padding: 0 1.5rem 4rem; }
+
+  .cta-band { padding: 4rem 1.5rem; }
+
+  .cta-band-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta-band-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn { width: 100%; justify-content: center; }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">99 Tartans</a>
+  <ul class="nav-center" id="navLinks">
+    <li><a href="about.html" onclick="closeNav()">About</a></li>
+    <li><a href="portfolio.html" onclick="closeNav()">Portfolio</a></li>
+    <li><a href="team.html" onclick="closeNav()">Team</a></li>
+    <li><a href="events.html" onclick="closeNav()">Events</a></li>
+    <li><a href="faq.html" onclick="closeNav()">FAQ</a></li>
+    <li><a href="contact.html" onclick="closeNav()">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <span class="nav-meta" id="navMeta">Pittsburgh, --:--</span>
+    <a href="contact.html" class="nav-cta">Apply now</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── Page Header ── -->
+<div class="page-header reveal">
+  <div class="page-header-label">Sample Membership Agreement</div>
+  <h1>99 Tartans Alumni Angels Membership Agreement</h1>
+  <p class="page-header-desc">This Membership Agreement ("Agreement") is entered into by and between 99 Tartans Alumni Angels, a non-profit organization established for the benefit of the Carnegie Mellon University ("CMU") alumni community, and the undersigned member ("Member").</p>
+  <p class="page-header-meta">Effective Date: [Date of Member Acceptance]</p>
+</div>
+
+<!-- ── Document ── -->
+<div class="doc">
+
+  <!-- Sample notice -->
+  <div class="callout reveal" style="margin-bottom:2.5rem;">
+    <p><strong>Sample agreement.</strong> This is a sample of the membership agreement provided for illustration only. It is not the final or binding version, and specific terms (including bracketed items and dates) are subject to change. The definitive agreement will be provided during the membership acceptance process.</p>
+  </div>
+
+  <!-- Definition -->
+  <div class="doc-def reveal">
+    <h2>Definition of the Organization</h2>
+    <p>For the purpose of this Agreement, "the Organization" includes:</p>
+    <ul class="doc-list">
+      <li>99 Tartans Alumni Angels</li>
+      <li>99 Tartans Alumni Angels Board of Directors; both current and former</li>
+      <li>Current and former Members of 99 Tartans Alumni Angels</li>
+      <li>Student Members, Student Volunteers, and Advisers</li>
+      <li>Officers, employees, and agents of 99 Tartans Alumni Angels</li>
+      <li>Deal Leads of 99 Tartans Alumni Angels</li>
+      <li>Special Purpose Vehicles of 99 Tartans Alumni Angels</li>
+    </ul>
+  </div>
+
+  <!-- 1 -->
+  <div class="doc-section reveal">
+    <h2>1. Membership and Eligibility</h2>
+
+    <h3>1.1 CMU Affiliation</h3>
+    <p>The Member hereby certifies that they are an alumnus/alumna of Carnegie Mellon University or have another affiliation with the CMU community deemed acceptable by the Organization's Board of Directors, both current and former (the "Board").</p>
+
+    <h3>1.2 Accredited Investor Status (MANDATORY)</h3>
+    <p>The Member understands and acknowledges that:</p>
+    <ul class="doc-list lettered">
+      <li>All investment opportunities presented by or through the Organization involve the sale of securities that are not registered under the U.S. Securities Act of 1933, as amended, or any state securities laws.</li>
+      <li>The Member must qualify as an "Accredited Investor" as defined under Rule 501 of Regulation D of the U.S. Securities and Exchange Commission (SEC) or any similar exemption under applicable state or foreign law at the time of each investment.</li>
+      <li>The Member shall execute a separate Accredited Investor Questionnaire or Certification with AngelList, or as otherwise required by the Board or by applicable securities laws. Failure to maintain Accredited Investor status requires immediate written notice to the Organization and prohibits participation in any further investment opportunities.</li>
+    </ul>
+  </div>
+
+  <!-- 2 -->
+  <div class="doc-section reveal">
+    <h2>2. Purpose and Nature of the Organization</h2>
+
+    <h3>2.1 Non-Profit and Forum Nature</h3>
+    <p>99 Tartans Alumni Angels is a non-profit entity designed to facilitate the connection between CMU-affiliated investors and CMU-affiliated startups. It is also a mechanism to collect carried interest on exits that will be funneled to use that money in the CMU entrepreneurship community. The Organization is a forum for the presentation, discussion, and preliminary assessment of potential investment opportunities. The Organization may seek to raise funds through an annual membership fee or other means to support operations and communications of the NPO.</p>
+
+    <h3>2.2 Not a Venture Fund or Advisor</h3>
+    <p>The Member expressly acknowledges and agrees that:</p>
+    <ul class="doc-list lettered">
+      <li>The Organization is not a venture capital fund, broker-dealer, investment adviser, or financial planner.</li>
+      <li>The Organization does not solicit or recommend any security for purchase, sale, or exchange.</li>
+      <li>Neither the Organization, its Board, nor its Student Members or Advisers provides, nor shall they be deemed to provide, any investment, legal, tax, or accounting advice. All information presented is for informational purposes only.</li>
+    </ul>
+  </div>
+
+  <!-- 3 -->
+  <div class="doc-section reveal">
+    <h2>3. Member Obligations and Due Diligence</h2>
+
+    <h3>3.1 Individual Investment Decision</h3>
+    <p>The Member acknowledges that membership does not guarantee the right or ability to invest in any opportunity. Any investment made by the Member is an independent, private transaction made by the Member, as described in the applicable Limited Partnership Agreement, Private Placement Memorandum, and other documents specific to the investment itself.</p>
+
+    <h3>3.2 Requirement for Individual Due Diligence</h3>
+    <p>The Member is solely responsible for conducting their own comprehensive and thorough due diligence and evaluation of any potential investment opportunity. This responsibility includes, but is not limited to:</p>
+    <ul class="doc-list lettered">
+      <li>Seeking independent legal, tax, and financial advice regarding the suitability and risks of any investment.</li>
+      <li>Verifying the accuracy of all facts, figures, and representations made by the presenting company.</li>
+      <li>Determining the appropriate amount, if any, to invest based on the Member's personal financial situation and risk tolerance.</li>
+    </ul>
+
+    <h3>3.3 Investment Risk Acknowledgment</h3>
+    <p>The Member acknowledges that investing in early-stage startups is highly risky, speculative, and illiquid. The Member is capable of bearing the economic risk of a complete loss of their entire investment principal.</p>
+  </div>
+
+  <!-- 4 -->
+  <div class="doc-section reveal">
+    <h2>4. Limitation of Liability and Indemnification</h2>
+
+    <h3>4.1 Release of Liability</h3>
+    <p>In consideration of the privilege of membership and access to potential investment opportunities, the Member agrees to unconditionally release, waive, and discharge, and shall not bring any claim or action against, the Organization for any and all losses, damages, or liabilities arising out of or related to their membership, including but not limited to:</p>
+    <ul class="doc-list lettered">
+      <li><strong>Information &amp; Accuracy:</strong> Any information, opinions, or materials provided by any presenting company, or any errors, omissions, or inaccuracies in materials curated or distributed by the Released Parties;</li>
+      <li><strong>Deal Selection &amp; Timing:</strong> The Organization's decision to present, or not present, any particular opportunity, or the timing thereof;</li>
+      <li><strong>Investment Outcome:</strong> The financial performance or outcome of any investment, including the total loss of principal and any tax liabilities incurred by the Member;</li>
+      <li><strong>Personal Conduct &amp; Events:</strong> Any injury, property damage, or claims of defamation (libel/slander) arising from participation in live or virtual events, or interactions with other Members or third-party presenters;</li>
+      <li><strong>Cyber &amp; Technical Risks:</strong> Any damages resulting from system failures, unauthorized access to Member data (data breaches), or the inadvertent transmission of malicious software (viruses);</li>
+      <li><strong>Professional Advice:</strong> Any claims arising from the Member's reliance on information provided as legal, tax, or investment advice. Members are explicitly advised to consult their own professional counsel.</li>
+    </ul>
+
+    <h3>4.3 Agreement to Hold Harmless (Indemnification)</h3>
+    <p>The Member hereby agrees to indemnify and hold harmless all the Organization from and against any and all claims, liabilities, costs, expenses (including, without limitation, reasonable attorney's fees), losses, and damages, whether direct or indirect, arising from or connected with but not limited to:</p>
+    <ul class="doc-list lettered">
+      <li>Any investment made or not made by the Member following an introduction through the Organization;</li>
+      <li>The Member's breach of any covenant, representation, or warranty contained in this Agreement (including the Accredited Investor certification); or</li>
+      <li>Any failure by the Member to conduct adequate individual due diligence.</li>
+    </ul>
+  </div>
+
+  <!-- 5 -->
+  <div class="doc-section reveal">
+    <h2>5. Confidentiality and Compliance</h2>
+
+    <h3>5.1 Handling of Confidential Information</h3>
+    <p>The Member agrees to preserve the confidentiality of all non-public information received through or from the Organization, including, without limitation, proprietary company data, financial projections, business plans, and internal discussions among Members.</p>
+
+    <h3>5.2 Prohibition on Use of Material Non-Public Information (MNPI)</h3>
+    <p>The Member understands that by participating in the Organization, they may encounter information related to a private startup that may, upon its acquisition or merger, partnership, or interaction with a publicly-traded company, become Material Non-Public Information (MNPI).</p>
+    <p>Therefore, the Member agrees that they shall not:</p>
+    <ul class="doc-list lettered">
+      <li><strong>Trade Securities:</strong> Buy or sell any security of a publicly-traded company while in possession of information that could be considered MNPI relating to that public company (e.g., knowledge of an impending acquisition, merger, or large contract).</li>
+      <li><strong>Tip:</strong> Disclose or "tip" any such MNPI to any other person who may trade on the information.</li>
+    </ul>
+    <p>Further, the Member agrees that they will:</p>
+    <ul class="doc-list lettered">
+      <li><strong>Comply with Laws:</strong> At all times comply with all applicable U.S. and foreign securities laws, including but not limited to laws concerning insider trading. The Member understands that the misuse of MNPI is illegal and may result in severe civil and criminal penalties, and that the Organization bears no responsibility for the Member's securities law compliance.</li>
+    </ul>
+
+    <h3>5.3 Governing Law</h3>
+    <p>This Agreement shall be governed by and construed in accordance with the laws of the Commonwealth of Pennsylvania, without regard to conflict of laws principles.</p>
+  </div>
+
+  <!-- 6 -->
+  <div class="doc-section reveal">
+    <h2>6. Non-Circumvention and Direct Investment</h2>
+
+    <h3>6.1 Prohibition on Direct Investment</h3>
+    <p>Members acknowledge that the Organization spends significant time and resources building a network and sourcing investment opportunities with Target Companies. As a condition of membership and access to these proprietary opportunities, each Member agrees that they shall not, directly or indirectly, negotiate with or enter into any investment transaction with a Target Company introduced to them by the Organization without participating through the Organization's designated Special Purpose Vehicle (SPV).</p>
+
+    <h3>6.2 Scope of Introduction</h3>
+    <p>An "introduction" is defined as any disclosure of a Target Company's identity, pitch deck, financials, or meeting invitation provided to the Member via the Organization portal, email list, or member events. This restriction shall apply to the Member and any affiliates, family members, or entities controlled by the Member for a period of [24 months] following the initial introduction.</p>
+
+    <h3>6.3 Required Board Approval for Exceptions</h3>
+    <p>If a Member wishes to invest in a Target Company outside of the Organization SPV (e.g., if the Member has a pre-existing relationship with the founder or wishes to lead a separate round), the following protocol must be observed:</p>
+    <ul class="doc-list">
+      <li><strong>Written Request:</strong> The Member must submit a formal written request to the Organization Board of Directors.</li>
+      <li><strong>Prior Agreement:</strong> No direct investment or commitment may be made until the Member has received express written consent from the Board.</li>
+    </ul>
+
+    <h3>6.4 Remedies for Breach</h3>
+    <p>Any Member found to be in violation of this Non-Circumvention clause may be subject to:</p>
+    <ul class="doc-list">
+      <li>Immediate termination of membership from the Organization.</li>
+    </ul>
+  </div>
+
+  <!-- 7 -->
+  <div class="doc-section reveal">
+    <h2>7. Member Code of Conduct</h2>
+
+    <h3>7.1 Professionalism and Respect</h3>
+    <p>Members shall conduct themselves with the highest degree of professionalism and integrity during all the Organization's functions, whether in-person or virtual. This includes, but is not limited to, interactions with fellow Members, Board members, and founders of Target Companies.</p>
+
+    <h3>7.2 Prohibited Conduct</h3>
+    <p>The following behaviors are strictly prohibited and may result in the immediate termination of Membership without refund of any dues:</p>
+    <ul class="doc-list">
+      <li><strong>Harassment and Discrimination:</strong> Any form of harassment, discrimination, or offensive behavior related to race, gender, religion, age, disability, or sexual orientation.</li>
+      <li><strong>Defamation:</strong> Making false statements (libel or slander) regarding the Organization, its leadership, or the professional reputation of Target Company founders.</li>
+      <li><strong>Aggressive Solicitation:</strong> Using the Organization member directory or events to aggressively solicit services or sell non-related products to other Members.</li>
+    </ul>
+
+    <h3>7.3 Event Safety and Liability</h3>
+    <ul class="doc-list">
+      <li><strong>Personal Responsibility:</strong> Members participate in live events at their own risk. The Organization is not responsible for personal injury, theft, or loss of property occurring at event venues.</li>
+      <li><strong>Alcohol Consumption:</strong> If alcohol is served at an event, Members agree to consume responsibly. The Organization assumes no liability for the actions of Members or guests resulting from intoxication.</li>
+      <li><strong>Adherence to Venue Rules:</strong> Members agree to follow all safety guidelines and rules established by third-party venues (e.g., University facilities, private clubs, or coworking spaces).</li>
+    </ul>
+
+    <h3>7.4 Duty of Confidentiality</h3>
+    <p>Members shall not record (audio or video) any pitch sessions or private member deliberations without express written consent from the Board and the presenting founder.</p>
+  </div>
+
+  <!-- 8 -->
+  <div class="doc-section reveal">
+    <h2>8. Independent Entity and University Affiliation</h2>
+
+    <h3>8.1 Independent Status</h3>
+    <p>The Member acknowledges that 99 Tartans Alumni Angels is an independent 501(c)(3) non-profit organization. It is not a subsidiary, department, or legal affiliate of Carnegie Mellon University ("CMU").</p>
+
+    <h3>9.2 No University Liability</h3>
+    <p>The Member expressly agrees that CMU is not responsible for the management, oversight, or financial performance of the Organization or any specific investment opportunity presented. CMU shall have no liability for any losses, damages, or claims arising from the Member's participation in the Organization.</p>
+
+    <h3>9.3 Use of Name and Marks</h3>
+    <p>The Member acknowledges that the use of the Organization's name and any related imagery is intended to signify the shared alumni background of its members and does not imply an endorsement, sponsorship, or partnership by CMU.</p>
+
+    <h3>9.4 No Endorsement</h3>
+    <p>The presentation of a Target Company by the Organization does not constitute an endorsement by Carnegie Mellon University or any of its academic departments (e.g., the Tepper School of Business).</p>
+  </div>
+
+  <!-- Acceptance -->
+  <div class="acceptance reveal">
+    <div class="callout">
+      <p><strong>By signing below, the Member acknowledges that they have read, understood, and agreed to all terms contained in this Membership Agreement, including but not limited to the mandatory Accredited Investor requirement and the waiver of liability of investment losses.</strong></p>
+    </div>
+
+    <div class="acceptance-note" style="margin-top:2.5rem;">Member Acceptance</div>
+
+    <div class="sign-field">
+      <div class="sign-label">Name</div>
+      <div class="sign-line"></div>
+    </div>
+    <div class="sign-field">
+      <div class="sign-label">Signature</div>
+      <div class="sign-line"></div>
+    </div>
+    <div class="sign-field">
+      <div class="sign-label">Date</div>
+      <div class="sign-line"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── CTA Band ── -->
+<div class="cta-band">
+  <div class="cta-band-inner reveal">
+    <div class="cta-band-text">
+      <h2>Ready to join 99 Tartans?</h2>
+      <p>Apply to become a member and start backing CMU founders.</p>
+    </div>
+    <div class="cta-band-actions">
+      <a href="contact.html" class="btn btn-dark">
+        Apply now
+      </a>
+      <a href="faq.html" class="btn btn-outline">
+        Read the FAQ
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      99 Tartans · 501(c)(3) nonprofit<br>
+      6401 Penn Ave, Pittsburgh, PA 15206<br>
+      <a href="mailto:hello@99Tartans.com">hello@99Tartans.com</a>
+    </div>
+    <div class="footer-right">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="events.html">Events</a>
+      <a href="membership.html">Membership</a>
+      <a href="contact.html">Apply</a>
+      <a href="https://www.linkedin.com/company/99tartansalumniangels/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Pittsburgh time ──
+function updateTime() {
+  const now = new Date().toLocaleTimeString('en-US', {
+    timeZone: 'America/New_York',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false
+  });
+  document.getElementById('navMeta').textContent = 'Pittsburgh, ' + now;
+}
+updateTime();
+setInterval(updateTime, 30000);
+
+// ── Nav scroll ──
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// ── Mobile nav ──
+const toggle = document.getElementById('navToggle');
+const links = document.getElementById('navLinks');
+
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('active');
+  links.classList.toggle('open');
+  document.body.style.overflow = links.classList.contains('open') ? 'hidden' : '';
+});
+
+function closeNav() {
+  toggle.classList.remove('active');
+  links.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ── Scroll reveal ──
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

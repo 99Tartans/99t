@@ -380,6 +380,105 @@ nav.scrolled {
   text-transform: uppercase;
 }
 
+/* ── Clickable event row ── */
+.event-card--clickable {
+  cursor: pointer;
+  transition: background 0.3s ease, padding 0.3s ease;
+}
+
+.event-card--clickable:hover {
+  background: var(--bg-alt);
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* ── Registration modal ── */
+.reg-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(24, 24, 27, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.reg-modal.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.reg-modal-box {
+  background: var(--surface);
+  width: 100%;
+  max-width: 620px;
+  max-height: calc(100vh - 3rem);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 64px rgba(24, 24, 27, 0.25);
+  transform: translateY(16px);
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reg-modal.open .reg-modal-box {
+  transform: translateY(0);
+}
+
+.reg-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.4rem 1.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.reg-modal-title {
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.35;
+}
+
+.reg-modal-sub {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin-top: 0.2rem;
+}
+
+.reg-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--text-mid);
+  cursor: pointer;
+  transition: color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.reg-modal-close:hover { color: var(--text); }
+
+.reg-modal-box iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .reg-modal { padding: 1rem; }
+  .reg-modal-box iframe { height: 70vh; }
+}
+
 /* ── Empty state for Upcoming ── */
 .empty-state {
   padding: 4rem 0 3rem;
@@ -654,6 +753,7 @@ footer {
   <ul class="nav-center" id="navLinks">
     <li><a href="about.html" onclick="closeNav()">About</a></li>
     <li><a href="portfolio.html" onclick="closeNav()">Portfolio</a></li>
+    <li><a href="gallery.html" onclick="closeNav()">Gallery</a></li>
     <li><a href="team.html" onclick="closeNav()">Team</a></li>
     <li><a href="events.html" class="active" onclick="closeNav()">Events</a></li>
     <li><a href="faq.html" onclick="closeNav()">FAQ</a></li>
@@ -679,17 +779,63 @@ footer {
 <section class="events-section">
   <div class="section-label reveal">
     <span class="section-label-title">Upcoming</span>
-    <span class="section-label-count">None scheduled</span>
+    <span class="section-label-count">01</span>
   </div>
 
-  <div class="empty-state reveal">
-    <div class="empty-state-title">No events on the calendar right now.</div>
-    <div class="empty-state-desc">We're planning the next fireside. Email us to be notified when the next one is announced.</div>
-    <a href="mailto:hello@99Tartans.com?subject=Notify%20me%20about%20upcoming%20events" class="empty-state-cta">
-      Get on the list →
-    </a>
+  <div class="event-card event-card--clickable reveal" id="upcomingEventCard">
+    <div class="event-date">
+      <div class="event-date-day">08</div>
+      <div class="event-date-month">October</div>
+      <div class="event-date-year">2026</div>
+    </div>
+
+    <div class="event-body">
+      <span class="event-tag">Fireside Chat · In Person</span>
+      <h2 class="event-title">Fireside Chat with Severin Hacker (Duolingo)</h2>
+      <div class="event-speaker">With Severin Hacker — Co-founder &amp; CTO, Duolingo</div>
+      <p class="event-desc">Join us for a conversation with Severin Hacker, co-founder and CTO of Duolingo — the CMU-born company that became the world's most popular way to learn a language. This event is exclusive to 99 Tartans members and CMU students &amp; alumni.</p>
+      <div class="event-meta">
+        <div class="event-meta-item">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2.5" y="3.5" width="11" height="10" rx="1" stroke-width="1.2"/><path d="M2.5 6.5h11M5.5 2v3M10.5 2v3" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Thursday, October 8 · 5:30–6:30 PM ET
+        </div>
+        <div class="event-meta-item">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="6.5" r="2.5" stroke-width="1.2"/><path d="M8 14s5-4.5 5-8a5 5 0 0 0-10 0c0 3.5 5 8 5 8z" stroke-width="1.2" stroke-linejoin="round"/></svg>
+          Swartz Center for Entrepreneurship
+        </div>
+        <div class="event-meta-item">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 4.5h10v7H3z" stroke-width="1.2"/><path d="M3 4.5l5 4 5-4" stroke-width="1.2" stroke-linejoin="round"/></svg>
+          99 Tartans members &amp; CMU students/alumni
+        </div>
+      </div>
+    </div>
+
+    <div class="event-action">
+      <a href="https://luma.com/event/evt-9DY5ms7B2OVo5b1" id="registerBtn">Register →</a>
+    </div>
   </div>
 </section>
+
+<!-- ── Registration Modal ── -->
+<div class="reg-modal" id="regModal" role="dialog" aria-modal="true" aria-label="Event registration">
+  <div class="reg-modal-box">
+    <div class="reg-modal-header">
+      <div>
+        <div class="reg-modal-title">Fireside Chat with Severin Hacker</div>
+        <div class="reg-modal-sub">Thursday, October 8 · 5:30–6:30 PM ET · Swartz Center</div>
+      </div>
+      <button class="reg-modal-close" id="regModalClose" aria-label="Close">&times;</button>
+    </div>
+    <iframe
+      src="https://luma.com/embed/event/evt-9DY5ms7B2OVo5b1/simple"
+      frameborder="0"
+      allow="fullscreen; payment"
+      aria-hidden="false"
+      tabindex="0"
+      loading="lazy"
+    ></iframe>
+  </div>
+</div>
 
 <!-- ── Past Events ── -->
 <section class="events-section">
@@ -817,6 +963,30 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
 reveals.forEach(el => observer.observe(el));
+
+// ── Registration modal ──
+const regModal = document.getElementById('regModal');
+const registerBtn = document.getElementById('registerBtn');
+
+function openRegModal(e) {
+  if (e) e.preventDefault();
+  regModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+registerBtn.addEventListener('click', openRegModal);
+document.getElementById('upcomingEventCard').addEventListener('click', openRegModal);
+
+function closeRegModal() {
+  regModal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('regModalClose').addEventListener('click', closeRegModal);
+regModal.addEventListener('click', (e) => { if (e.target === regModal) closeRegModal(); });
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && regModal.classList.contains('open')) closeRegModal();
+});
 </script>
 
 </body>

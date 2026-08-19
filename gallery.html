@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — 99 Tartans</title>
+<meta name="description" content="Photos from the 99 Tartans portfolio — founders, products, and moments from CMU-founded companies.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #fafafa;
+  --bg-alt: #f4f4f5;
+  --surface: #ffffff;
+  --text: #18181b;
+  --text-mid: #52525b;
+  --text-light: #a1a1aa;
+  --accent: #18181b;
+  --accent-hover: #2563eb;
+  --rule: #e4e4e7;
+  --font: 'Inter', -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--surface);
+}
+
+/* ═══════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════ */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.5rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(250, 250, 250, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  transition: padding 0.4s ease;
+}
+
+nav.scrolled {
+  padding: 1rem 2.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.nav-logo {
+  font-family: var(--font);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.nav-center {
+  display: flex;
+  gap: 1.8rem;
+  list-style: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-center a {
+  font-family: var(--font);
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--text-mid);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  letter-spacing: 0.01em;
+}
+
+.nav-center a:hover,
+.nav-center a.active {
+  color: var(--text);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-meta {
+  font-family: var(--font);
+  font-size: 0.82rem;
+  color: var(--text-light);
+}
+
+.nav-cta {
+  font-family: var(--font);
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-cta:hover {
+  color: var(--accent-hover);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 26px;
+  height: 18px;
+  position: relative;
+  z-index: 110;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: var(--text);
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle span:nth-child(1) { top: 0; }
+.nav-toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.nav-toggle span:nth-child(3) { bottom: 0; }
+
+.nav-toggle.active span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
+
+/* ═══════════════════════════════════════
+   PAGE HEADER
+   ═══════════════════════════════════════ */
+.page-header {
+  padding: 10rem 2.5rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header-label {
+  font-family: var(--font);
+  font-size: 0.7rem;
+  color: var(--text-light);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.page-header h1 {
+  font-family: var(--font);
+  font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  max-width: 700px;
+}
+
+.page-header-desc {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--text-mid);
+  max-width: 520px;
+  line-height: 1.7;
+  margin-top: 1.5rem;
+}
+
+/* ═══════════════════════════════════════
+   FILTER TABS
+   ═══════════════════════════════════════ */
+.filters {
+  padding: 0 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  font-family: var(--font);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  padding: 0.55rem 1.2rem;
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--text-mid);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.filter-btn.active {
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--bg);
+}
+
+/* ═══════════════════════════════════════
+   GALLERY — masonry columns
+   ═══════════════════════════════════════ */
+.gallery {
+  padding: 0 2.5rem 7rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-grid {
+  columns: 3;
+  column-gap: 1.5rem;
+}
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  cursor: zoom-in;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-alt);
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.03);
+}
+
+.gallery-item-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2.2rem 1.1rem 0.9rem;
+  background: linear-gradient(to top, rgba(24, 24, 27, 0.72), rgba(24, 24, 27, 0));
+  color: #fff;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-item-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gic-title {
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.gic-company {
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+  margin-top: 0.1rem;
+}
+
+.gallery-item.hidden { display: none; }
+
+/* ═══════════════════════════════════════
+   LIGHTBOX
+   ═══════════════════════════════════════ */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(250, 250, 250, 0.97);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  padding: 4.5rem 2.5rem 3rem;
+}
+
+.lightbox.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: calc(100% - 4rem);
+  object-fit: contain;
+  box-shadow: 0 24px 64px rgba(24, 24, 27, 0.18);
+}
+
+.lightbox-caption {
+  margin-top: 1.4rem;
+  text-align: center;
+}
+
+.lightbox-caption .lc-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.lightbox-caption .lc-company {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-top: 0.15rem;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.6rem;
+  right: 2.2rem;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--text-mid);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.lightbox-close:hover { color: var(--text); }
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--text-mid);
+  cursor: pointer;
+  padding: 1rem;
+  transition: color 0.3s ease;
+}
+
+.lightbox-arrow:hover { color: var(--text); }
+.lightbox-arrow.prev { left: 1rem; }
+.lightbox-arrow.next { right: 1rem; }
+
+/* ═══════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════ */
+footer {
+  background: var(--bg);
+  color: var(--text-mid);
+  padding: 3rem 2.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left {
+  font-family: var(--font);
+  font-size: 0.7rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+}
+
+.footer-left a {
+  color: var(--text-mid);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-left a:hover {
+  color: var(--accent-hover);
+}
+
+.footer-right {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-right a {
+  font-family: var(--font);
+  font-size: 0.7rem;
+  color: var(--text-light);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.footer-right a:hover {
+  color: var(--accent-hover);
+}
+
+/* ═══════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .gallery-grid { columns: 2; }
+}
+
+@media (max-width: 768px) {
+  nav { padding: 1.2rem 1.5rem; }
+
+  .nav-center {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transform: none;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 105;
+  }
+
+  .nav-center.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .nav-center a {
+    font-size: 1.2rem;
+    color: var(--text-mid);
+  }
+
+  .nav-meta { display: none; }
+  .nav-cta { display: none; }
+  .nav-toggle { display: block; }
+
+  .page-header { padding: 8rem 1.5rem 3rem; }
+  .filters { padding: 0 1.5rem; margin-bottom: 2rem; }
+  .gallery { padding: 0 1.5rem 5rem; }
+  .gallery-grid { columns: 1; }
+
+  .lightbox { padding: 4rem 1rem 2rem; }
+  .lightbox-arrow.prev { left: 0; }
+  .lightbox-arrow.next { right: 0; }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">99 Tartans</a>
+  <ul class="nav-center" id="navLinks">
+    <li><a href="about.html" onclick="closeNav()">About</a></li>
+    <li><a href="portfolio.html" onclick="closeNav()">Portfolio</a></li>
+    <li><a href="gallery.html" class="active" onclick="closeNav()">Gallery</a></li>
+    <li><a href="team.html" onclick="closeNav()">Team</a></li>
+    <li><a href="events.html" onclick="closeNav()">Events</a></li>
+    <li><a href="faq.html" onclick="closeNav()">FAQ</a></li>
+    <li><a href="contact.html" onclick="closeNav()">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <span class="nav-meta" id="navMeta">Pittsburgh, --:--</span>
+    <a href="contact.html" class="nav-cta">Apply now</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── Page Header ── -->
+<div class="page-header reveal">
+  <div class="page-header-label">Gallery</div>
+  <h1>Founders and products, up close.</h1>
+  <p class="page-header-desc">Snapshots from across the 99 Tartans portfolio — demo days, factory floors, product launches, and the people behind them.</p>
+</div>
+
+<!-- ── Filter Tabs ── -->
+<div class="filters reveal" id="filters">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="estat">ESTAT</button>
+  <button class="filter-btn" data-filter="gridwise">Gridwise</button>
+  <button class="filter-btn" data-filter="lion-pose">Lion Pose</button>
+  <button class="filter-btn" data-filter="mach9">Mach9</button>
+  <button class="filter-btn" data-filter="module">Module</button>
+  <button class="filter-btn" data-filter="octapulse">Octapulse</button>
+  <button class="filter-btn" data-filter="revvo">Revvo</button>
+</div>
+
+<!-- ── Gallery ── -->
+<div class="gallery">
+  <div class="gallery-grid reveal" id="galleryGrid">
+
+    <figure class="gallery-item" data-company="estat">
+      <img src="photos/ESTAT Demo at Automate in Chicago.png" alt="ESTAT demo at Automate in Chicago" loading="lazy">
+      <figcaption class="gallery-item-caption">
+        <div class="gic-title">Demo at Automate, Chicago</div>
+        <div class="gic-company">ESTAT Actuation</div>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-company="gridwise">
+      <img src="photos/Gridwise Founders Ryan Green and Brian Finamore.avif" alt="Gridwise founders Ryan Green and Brian Finamore" loading="lazy">
+      <figcaption class="gallery-item-caption">
+        <div class="gic-title">Founders Ryan Green &amp; Brian Finamore</div>
+        <div class="gic-company">Gridwise</div>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-company="gridwise">
+      <img src="photos/Gridwise Product1.png" alt="Gridwise product" loading="lazy">
+      <figcaption class="gallery-item-caption">
+        <div class="gic-title">Driver analytics in action</div>
+        <div class="gic-company">Gridwise</div>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-company="gridwise">
+      <img src="photos/Gridwise Product2.png" alt="Gridwise product" loading="lazy">
+      <figcaption class="gallery-item-caption">
+        <div class="gic-title">Product</div>
+        <div class="gic-company">Gridwise</div>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-company="gridwise">
+      <img src="photos/Gridwise Product4.avif" alt="Gridwise product" loading="lazy">
+      <figcaption class="gallery-item-caption">
+        <div class="gic-title">Product</div>
+        <div class="gic-company">Gridwise</div>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-company="lion-pose">
+      <img src="photos/Lion Pose Founders Madhu Punjabi and Nisha Phatak.webp" alt="Lion Pose founders Madhu Punjabi and Nisha Phatak" loading="lazy">
+      <figcaption class="gallery-item-caption">
+        <div class="gic-title">Founders Madhu Punjabi &amp; Nisha Phatak</div>
+        <div class="gic-company">Lion Pose</div>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-company="lion-pose">
+      <img src="photos/Lion Pose Products.webp" alt="Lion Pose products" loading="lazy">
+      <figcaption class="gallery-item-caption">
+        <div class="gic-title">Product line</div>
+        <div class="gic-company">Lion Pose</div>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-company="lion-pose">
+      <img src="photos/Lion Pose 2.png" alt="Lion Pose" loading="lazy">
+      <figcaption class="gallery-item-caption">
+        <div class="gic-title">Lion Pose</div>
+        <div class="gic-company">Lion Pose</div>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-company="mach9">
+      <img src="photos/Mach9 Founders Haowen Shi - Alexander Baikovitz - Zachary Sussman - Michael Mong.webp" alt="Mach9 founders Haowen Shi, Alexander Baikovitz, Zachary Sussman, and Michael Mong" loading="lazy">
+      <figcaption class="gallery-item-caption">
+        <div class="gic-title">Founders Haowen Shi, Alexander Baikovitz, Zachary Sussman &amp; Michael Mong</div>
+        <div class="gic-company">Mach9 Robotics</div>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-company="mach9">
+      <img src="photos/Mach9 Product.png" alt="Mach9 product" loading="lazy">
+      <figcaption class="gallery-item-caption">
+        <div class="gic-title">Geospatial platform</div>
+        <div class="gic-company">Mach9 Robotics</div>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-company="mach9">
+      <img src="photos/Mach9 Product2.png" alt="Mach9 product" loading="lazy">
+      <figcaption class="gallery-item-caption">
+        <div class="gic-title">Geospatial platform</div>
+        <div class="gic-company">Mach9 Robotics</div>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-company="module">
+      <img src="photos/Module 1.webp" alt="Module build" loading="lazy">
+      <figcaption class="gallery-item-caption">
+        <div class="gic-title">On site</div>
+        <div class="gic-company">Module Design</div>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-company="module">
+      <img src="photos/Module 2.webp" alt="Module build" loading="lazy">
+      <figcaption class="gallery-item-caption">
+        <div class="gic-title">On site</div>
+        <div class="gic-company">Module Design</div>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-company="module">
+      <img src="photos/Module 3.webp" alt="Module build" loading="lazy">
+      <figcaption class="gallery-item-caption">
+        <div class="gic-title">On site</div>
+        <div class="gic-company">Module Design</div>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-company="module">
+      <img src="photos/Module 4.webp" alt="Module build" loading="lazy">
+      <figcaption class="gallery-item-caption">
+        <div class="gic-title">On site</div>
+        <div class="gic-company">Module Design</div>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-company="module">
+      <img src="photos/Brian Gaudio.webp" alt="Brian Gaudio" loading="lazy">
+      <figcaption class="gallery-item-caption">
+        <div class="gic-title">Brian Gaudio</div>
+        <div class="gic-company">Module Design</div>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-company="module">
+      <img src="photos/Drew Brisley.webp" alt="Drew Brisley" loading="lazy">
+      <figcaption class="gallery-item-caption">
+        <div class="gic-title">Drew Brisley</div>
+        <div class="gic-company">Module Design</div>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-company="module">
+      <img src="photos/Hallie Dumont.webp" alt="Hallie Dumont" loading="lazy">
+      <figcaption class="gallery-item-caption">
+        <div class="gic-title">Hallie Dumont</div>
+        <div class="gic-company">Module Design</div>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-company="octapulse">
+      <img src="photos/Octapulse Action Shot.jpeg" alt="Octapulse in action" loading="lazy">
+      <figcaption class="gallery-item-caption">
+        <div class="gic-title">In the field</div>
+        <div class="gic-company">Octapulse</div>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-company="octapulse">
+      <img src="photos/Octapulse Paul Grech.jpeg" alt="Octapulse founder Paul Grech" loading="lazy">
+      <figcaption class="gallery-item-caption">
+        <div class="gic-title">Paul Grech</div>
+        <div class="gic-company">Octapulse</div>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-company="octapulse">
+      <img src="photos/Octapulse YCombinator.jpeg" alt="Octapulse at Y Combinator" loading="lazy">
+      <figcaption class="gallery-item-caption">
+        <div class="gic-title">At Y Combinator</div>
+        <div class="gic-company">Octapulse</div>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-company="revvo">
+      <img src="photos/Revvo Technologies Sunjay and Andrew.jpg" alt="Revvo Technologies founders Sunjay and Andrew" loading="lazy">
+      <figcaption class="gallery-item-caption">
+        <div class="gic-title">Sunjay &amp; Andrew</div>
+        <div class="gic-company">Revvo Technologies</div>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-company="revvo">
+      <img src="photos/Revvo Product1.png" alt="Revvo product" loading="lazy">
+      <figcaption class="gallery-item-caption">
+        <div class="gic-title">Tire intelligence platform</div>
+        <div class="gic-company">Revvo Technologies</div>
+      </figcaption>
+    </figure>
+
+    <figure class="gallery-item" data-company="revvo">
+      <img src="photos/Revvo Product2.png" alt="Revvo product" loading="lazy">
+      <figcaption class="gallery-item-caption">
+        <div class="gic-title">Tire intelligence platform</div>
+        <div class="gic-company">Revvo Technologies</div>
+      </figcaption>
+    </figure>
+
+  </div>
+</div>
+
+<!-- ── Lightbox ── -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <button class="lightbox-arrow prev" id="lightboxPrev" aria-label="Previous photo">&larr;</button>
+  <img id="lightboxImg" src="" alt="">
+  <button class="lightbox-arrow next" id="lightboxNext" aria-label="Next photo">&rarr;</button>
+  <div class="lightbox-caption">
+    <div class="lc-title" id="lightboxTitle"></div>
+    <div class="lc-company" id="lightboxCompany"></div>
+  </div>
+</div>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      99 Tartans · 501(c)(3) nonprofit<br>
+      6401 Penn Ave, Pittsburgh, PA 15206<br>
+      <a href="mailto:hello@99Tartans.com">hello@99Tartans.com</a>
+    </div>
+    <div class="footer-right">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="events.html">Events</a>
+      <a href="membership.html">Membership</a>
+      <a href="contact.html">Apply</a>
+      <a href="https://www.linkedin.com/company/99tartansalumniangels/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Pittsburgh time ──
+function updateTime() {
+  const now = new Date().toLocaleTimeString('en-US', {
+    timeZone: 'America/New_York',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false
+  });
+  document.getElementById('navMeta').textContent = 'Pittsburgh, ' + now;
+}
+updateTime();
+setInterval(updateTime, 30000);
+
+// ── Nav scroll ──
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// ── Mobile nav ──
+const toggle = document.getElementById('navToggle');
+const links = document.getElementById('navLinks');
+
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('active');
+  links.classList.toggle('open');
+  document.body.style.overflow = links.classList.contains('open') ? 'hidden' : '';
+});
+
+function closeNav() {
+  toggle.classList.remove('active');
+  links.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ── Scroll reveal ──
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+// ── Filter logic ──
+const filterBtns = document.querySelectorAll('.filter-btn');
+const items = Array.from(document.querySelectorAll('.gallery-item'));
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const filter = btn.dataset.filter;
+
+    items.forEach((item, i) => {
+      const match = filter === 'all' || item.dataset.company === filter;
+      item.classList.toggle('hidden', !match);
+      if (match) {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(12px)';
+        requestAnimationFrame(() => {
+          item.style.transition = `opacity 0.4s ease ${i * 0.03}s, transform 0.4s ease ${i * 0.03}s`;
+          item.style.opacity = '1';
+          item.style.transform = 'translateY(0)';
+        });
+      }
+    });
+  });
+});
+
+// ── Lightbox ──
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxTitle = document.getElementById('lightboxTitle');
+const lightboxCompany = document.getElementById('lightboxCompany');
+let currentIndex = -1;
+
+function visibleItems() {
+  return items.filter(item => !item.classList.contains('hidden'));
+}
+
+function showLightbox(item) {
+  const visible = visibleItems();
+  currentIndex = visible.indexOf(item);
+  const img = item.querySelector('img');
+  lightboxImg.src = img.src;
+  lightboxImg.alt = img.alt;
+  lightboxTitle.textContent = item.querySelector('.gic-title').textContent;
+  lightboxCompany.textContent = item.querySelector('.gic-company').textContent;
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+  currentIndex = -1;
+}
+
+function stepLightbox(dir) {
+  const visible = visibleItems();
+  if (!visible.length || currentIndex < 0) return;
+  currentIndex = (currentIndex + dir + visible.length) % visible.length;
+  showLightbox(visible[currentIndex]);
+}
+
+items.forEach(item => item.addEventListener('click', () => showLightbox(item)));
+document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+document.getElementById('lightboxPrev').addEventListener('click', e => { e.stopPropagation(); stepLightbox(-1); });
+document.getElementById('lightboxNext').addEventListener('click', e => { e.stopPropagation(); stepLightbox(1); });
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') stepLightbox(-1);
+  if (e.key === 'ArrowRight') stepLightbox(1);
+});
+</script>
+
+</body>
+</html>

@@ -1,5 +1,6 @@
 # Updating the 99 Tartans website
 
+The site is plain HTML files in the GitHub repo https://github.com/99Tartans/99t.
 Vercel watches the `main` branch and redeploys https://www.99tartans.com automatically
 about a minute after every push. There is no build step and nothing to install.
 
@@ -108,7 +109,7 @@ be made in all eight files.
 
 ### Option A: Edit on GitHub.com (no software needed)
 
-1. Go to https://github.com/DavidZhongtai/99t.
+1. Go to https://github.com/99Tartans/99t.
 2. Click the file (for example `events.json`), then the pencil icon (Edit).
 3. Make your change, then click **Commit changes** and commit directly to `main`.
 4. Wait about a minute and reload https://www.99tartans.com/events.html.

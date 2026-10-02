@@ -1,0 +1,39 @@
+{
+  "_readme": "Source of truth for events.html. Add a new event by copying an existing object. Dates are YYYY-MM-DD. Events dated today or later show under Upcoming; earlier dates move to Past Events automatically. Set \"status\" to \"upcoming\" or \"past\" to override. Set \"registration\" to null when there is no sign-up link, and \"recording\" to null when there is no video.",
+  "events": [
+    {
+      "id": "severin-hacker-duolingo-2026",
+      "title": "Fireside Chat with Severin Hacker (Duolingo)",
+      "speaker": "Severin Hacker",
+      "speakerRole": "Co-founder & CTO, Duolingo",
+      "format": "Fireside Chat · In Person",
+      "date": "2026-10-08",
+      "time": "5:30–6:30 PM ET",
+      "location": "Swartz Center for Entrepreneurship",
+      "audience": "99 Tartans members & CMU students/alumni",
+      "description": "Join us for a conversation with Severin Hacker, co-founder and CTO of Duolingo — the CMU-born company that became the world's most popular way to learn a language. This event is exclusive to 99 Tartans members and CMU students & alumni.",
+      "registration": {
+        "url": "https://luma.com/event/evt-9DY5ms7B2OVo5b1",
+        "lumaEventId": "evt-9DY5ms7B2OVo5b1"
+      },
+      "recording": null
+    },
+    {
+      "id": "aurora-chris-urmson-2026",
+      "title": "Fireside Chat featuring Aurora Innovation",
+      "speaker": "Chris Urmson",
+      "speakerRole": "Co-founder & CEO, Aurora",
+      "format": "Fireside Chat · Virtual",
+      "date": "2026-01-29",
+      "time": null,
+      "location": "Virtual · Pittsburgh",
+      "audience": "Members & CMU community",
+      "description": "Aurora develops autonomous driving technology — most notably for heavy-duty freight trucks through its Aurora Driver system. The conversation covered how Aurora is bringing hardware, software, and AI together to make freight transportation safer, more efficient, and more reliable.",
+      "registration": null,
+      "recording": {
+        "url": "https://youtu.be/ijoMp4Urq8g",
+        "label": "Watch recording"
+      }
+    }
+  ]
+}

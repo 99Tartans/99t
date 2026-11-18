@@ -3,35 +3,35 @@
   "events": [
     {
       "id": "severin-hacker-duolingo-2026",
-      "title": "Fireside Chat with Severin Hacker (Duolingo)",
+      "title": "Fireside Chat featuring Duolingo",
       "speaker": "Severin Hacker",
       "speakerRole": "Co-founder & CTO, Duolingo",
-      "format": "Fireside Chat · In Person",
+      "format": "Fireside Chat",
       "date": "2026-10-08",
-      "time": "5:30–6:30 PM ET",
+      "time": null,
       "location": "Swartz Center for Entrepreneurship",
-      "audience": "99 Tartans members & CMU students/alumni",
-      "description": "Join us for a conversation with Severin Hacker, co-founder and CTO of Duolingo — the CMU-born company that became the world's most popular way to learn a language. This event is exclusive to 99 Tartans members and CMU students & alumni.",
-      "registration": {
-        "url": "https://luma.com/event/evt-9DY5ms7B2OVo5b1",
-        "lumaEventId": "evt-9DY5ms7B2OVo5b1"
-      },
-      "recording": null
+      "audience": "Members & CMU community",
+      "description": "Severin Hacker, co-founder of Duolingo, joins 99 Tartans Alumni Angels at Carnegie Mellon University's Swartz Center for Entrepreneurship for a conversation on technology, entrepreneurship, and the journey of building a global learning platform. From Duolingo’s beginnings at Carnegie Mellon to its mission of making education accessible to everyone, the conversation explores the intersection of learning, innovation, and company building. Hear Severin's perspective on the evolving role of artificial intelligence in education and the opportunities ahead for founders creating products with global impact. Watch the full interview and subscribe for more conversations with leaders shaping the future of technology and entrepreneurship.",
+      "registration": null,
+      "recording": {
+        "url": "https://youtu.be/qcGkSwa8A3U",
+        "label": "Watch recording"
+      }
     },
     {
       "id": "aurora-chris-urmson-2026",
       "title": "Fireside Chat featuring Aurora Innovation",
       "speaker": "Chris Urmson",
       "speakerRole": "Co-founder & CEO, Aurora",
-      "format": "Fireside Chat · Virtual",
+      "format": "Fireside Chat",
       "date": "2026-01-29",
       "time": null,
-      "location": "Virtual · Pittsburgh",
+      "location": "Virtual",
       "audience": "Members & CMU community",
-      "description": "Aurora develops autonomous driving technology — most notably for heavy-duty freight trucks through its Aurora Driver system. The conversation covered how Aurora is bringing hardware, software, and AI together to make freight transportation safer, more efficient, and more reliable.",
+      "description": "Chris Urmson, co-founder and CEO of Aurora Innovation, joins 99 Tartans Alumni Angels for a conversation on the future of autonomous transportation and the decades-long journey to bring self-driving technology into the real world. Urmson reflects on his early work leading Google’s self-driving car program, the founding of Aurora, and the technical and regulatory challenges of deploying autonomous trucks at scale. Hear how Aurora approaches safety and commercialization, why trucking is the first major market for autonomy, and what the next phase of transportation innovation may look like. Watch the full interview and subscribe for more conversations with leaders shaping the future of technology and entrepreneurship.",
       "registration": null,
       "recording": {
-        "url": "https://youtu.be/ijoMp4Urq8g",
+        "url": "https://youtu.be/TUs80Z8e8_A?si=3CAa1fgOFRBpdQqb",
         "label": "Watch recording"
       }
     }
